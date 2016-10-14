@@ -21,7 +21,7 @@ Example
 The following C++ module exports a function `test_tolower_bindings()` that creates active bindings that return the binding name in lowercase.
 
 ``` cpp
-#include <Rcpp.h> // not necessary to use plogr
+#include <Rcpp.h>
 
 // [[Rcpp::depends(RcppActiveBinding)]]
 #include <RcppActiveBinding.h>
