@@ -12,7 +12,8 @@ knitr::opts_chunk$set(
 )
 ```
 
-# RcppActiveBinding
+# RcppActiveBinding [![Travis-CI Build Status](https://travis-ci.org/krlmlr/RcppActiveBinding.svg?branch=master)](https://travis-ci.org/krlmlr/RcppActiveBinding)
+
 
 It's easy to create active bindings in R via
 [`makeActiveBinding()`](https://www.rdocumentation.org/packages/base/versions/3.3.1/topics/bindenv).

@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-RcppActiveBinding
-=================
+RcppActiveBinding [![Travis-CI Build Status](https://travis-ci.org/krlmlr/RcppActiveBinding.svg?branch=master)](https://travis-ci.org/krlmlr/RcppActiveBinding)
+===============================================================================================================================================================
 
 It's easy to create active bindings in R via [`makeActiveBinding()`](https://www.rdocumentation.org/packages/base/versions/3.3.1/topics/bindenv). This package faciliates the creation of active bindings that link back to C++ code. It provides an interface that allows binding several identifiers in an environment to the same C++ function, which is then called with the name (and a payload) as argument.
 
