@@ -49,7 +49,7 @@ private:
       stop("payload lost");
     std::string name_string = name;
     std::transform(name_string.begin(), name_string.end(), name_string.begin(), ::tolower);
-    return CharacterVector(name);
+    return CharacterVector(name_string);
   }
 
   SEXP toupper(Rcpp::String name) {
@@ -58,7 +58,7 @@ private:
       stop("payload lost");
     std::string name_string = name;
     std::transform(name_string.begin(), name_string.end(), name_string.begin(), ::toupper);
-    return CharacterVector(name);
+    return CharacterVector(name_string);
   }
 };
 
