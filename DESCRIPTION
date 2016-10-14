@@ -1,17 +1,17 @@
 Package: RcppActiveBinding
-Title: What the Package Does (one line, title case)
-Version: 0.0-0
+Title: An 'Rcpp' interface to active bindings
+Description: Provides an easy way to fill an environment with active bindings
+    that call a C++ function.
 Authors@R: person("Kirill", "Müller", role = c("aut", "cre"), email = "krlmlr+r@mailbox.org")
-Description: What the package does (one paragraph).
-Depends: R (>= 3.3.1)
-License: GPL-3
-Encoding: UTF-8
-LazyData: true
+Version: 0.0-0
 Date: 2016-10-14
 URLNote: https://github.com/krlmlr/
 BugReports: https://github.com/krlmlr/
 URL: http://krlmlr.github.io/
-LinkingTo: Rcpp, plogr
 Imports: Rcpp
-RoxygenNote: 5.0.1.9000
 Suggests: testthat
+LinkingTo: Rcpp, plogr
+RoxygenNote: 5.0.1.9000
+LazyData: true
+License: GPL-3
+Encoding: UTF-8

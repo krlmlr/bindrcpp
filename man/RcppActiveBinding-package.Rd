@@ -4,9 +4,10 @@
 \name{RcppActiveBinding-package}
 \alias{RcppActiveBinding}
 \alias{RcppActiveBinding-package}
-\title{What the Package Does (one line, title case)}
+\title{An 'Rcpp' interface to active bindings}
 \description{
-What the package does (one paragraph).
+Provides an easy way to fill an environment with active bindings
+that call a C++ function.
 }
 \details{
 TBD
