@@ -8,7 +8,6 @@ Date: 2016-10-14
 URLNote: https://github.com/krlmlr/
 BugReports: https://github.com/krlmlr/
 URL: http://krlmlr.github.io/
-Imports: Rcpp
 Suggests: testthat
 LinkingTo: Rcpp, plogr
 RoxygenNote: 5.0.1.9000

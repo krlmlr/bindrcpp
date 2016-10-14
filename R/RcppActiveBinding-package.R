@@ -2,5 +2,4 @@
 "_PACKAGE"
 
 #' @useDynLib RcppActiveBinding
-#' @importFrom Rcpp sourceCpp
 NULL
