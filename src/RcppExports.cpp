@@ -10,13 +10,13 @@
 using namespace Rcpp;
 
 // create_environment
-SEXP create_environment(CharacterVector names, XPtr<GETTER_FUNC> fun, XPtr<void*> payload, Environment parent);
+SEXP create_environment(CharacterVector names, XPtr<GETTER_FUNC> fun, XPtr<PAYLOAD> payload, Environment parent);
 static SEXP RcppActiveBinding_create_environment_try(SEXP namesSEXP, SEXP funSEXP, SEXP payloadSEXP, SEXP parentSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< CharacterVector >::type names(namesSEXP);
     Rcpp::traits::input_parameter< XPtr<GETTER_FUNC> >::type fun(funSEXP);
-    Rcpp::traits::input_parameter< XPtr<void*> >::type payload(payloadSEXP);
+    Rcpp::traits::input_parameter< XPtr<PAYLOAD> >::type payload(payloadSEXP);
     Rcpp::traits::input_parameter< Environment >::type parent(parentSEXP);
     rcpp_result_gen = Rcpp::wrap(create_environment(names, fun, payload, parent));
     return rcpp_result_gen;
@@ -82,7 +82,7 @@ END_RCPP
 static int RcppActiveBinding_RcppExport_validate(const char* sig) { 
     static std::set<std::string> signatures;
     if (signatures.empty()) {
-        signatures.insert("SEXP(*create_environment)(CharacterVector,XPtr<GETTER_FUNC>,XPtr<void*>,Environment)");
+        signatures.insert("SEXP(*create_environment)(CharacterVector,XPtr<GETTER_FUNC>,XPtr<PAYLOAD>,Environment)");
     }
     return signatures.find(sig) != signatures.end();
 }

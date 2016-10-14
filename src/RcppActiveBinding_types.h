@@ -3,6 +3,7 @@
 
 #include <Rcpp.h>
 
-typedef SEXP (*GETTER_FUNC)(Rcpp::String name, void* payload);
+typedef void* PAYLOAD;
+typedef SEXP (*GETTER_FUNC)(Rcpp::String name, PAYLOAD payload);
 
 #endif

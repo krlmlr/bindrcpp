@@ -6,7 +6,7 @@ using namespace Rcpp;
 
 // [[Rcpp::interfaces(cpp)]]
 // [[Rcpp::export]]
-SEXP create_environment(CharacterVector names, XPtr<GETTER_FUNC> fun, XPtr<void*> payload, Environment parent) {
+SEXP create_environment(CharacterVector names, XPtr<GETTER_FUNC> fun, XPtr<PAYLOAD> payload, Environment parent) {
   List fun_payload = List::create(_["fun"] = fun, _["payload"] = payload);
 
   Environment package("package:RcppActiveBinding");

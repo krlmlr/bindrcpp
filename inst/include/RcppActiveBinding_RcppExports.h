@@ -25,11 +25,11 @@ namespace RcppActiveBinding {
         }
     }
 
-    inline SEXP create_environment(CharacterVector names, XPtr<GETTER_FUNC> fun, XPtr<void*> payload, Environment parent) {
+    inline SEXP create_environment(CharacterVector names, XPtr<GETTER_FUNC> fun, XPtr<PAYLOAD> payload, Environment parent) {
         typedef SEXP(*Ptr_create_environment)(SEXP,SEXP,SEXP,SEXP);
         static Ptr_create_environment p_create_environment = NULL;
         if (p_create_environment == NULL) {
-            validateSignature("SEXP(*create_environment)(CharacterVector,XPtr<GETTER_FUNC>,XPtr<void*>,Environment)");
+            validateSignature("SEXP(*create_environment)(CharacterVector,XPtr<GETTER_FUNC>,XPtr<PAYLOAD>,Environment)");
             p_create_environment = (Ptr_create_environment)R_GetCCallable("RcppActiveBinding", "RcppActiveBinding_create_environment");
         }
         RObject rcpp_result_gen;
