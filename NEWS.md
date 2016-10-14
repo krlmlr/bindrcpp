@@ -1,3 +1,7 @@
+## RcppActiveBinding 0.0-2 (2016-10-15)
+
+- Now also works when package is loaded by R and not `devtools`.
+
 ## RcppActiveBinding 0.0-1 (2016-10-15)
 
 - Initial release
