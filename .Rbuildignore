@@ -1,2 +1,7 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
+^\.idea$
+^CMakeLists\.txt$
+^src/.*\.d$
+^src/Makevars\.local$
+^clion-test\.R$
