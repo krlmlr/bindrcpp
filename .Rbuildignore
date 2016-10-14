@@ -6,3 +6,5 @@
 ^src/Makevars\.local$
 ^clion-test\.R$
 ^src/inst$
+^README\.Rmd$
+^README-.*\.png$
