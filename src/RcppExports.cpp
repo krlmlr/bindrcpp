@@ -73,6 +73,38 @@ RcppExport SEXP RcppActiveBinding_callback(SEXP nameSEXP, SEXP fun_payloadSEXP) 
     UNPROTECT(1);
     return rcpp_result_gen;
 }
+// do_stest_create_environment
+SEXP do_stest_create_environment(CharacterVector names, Environment parent, String xform);
+static SEXP RcppActiveBinding_do_stest_create_environment_try(SEXP namesSEXP, SEXP parentSEXP, SEXP xformSEXP) {
+BEGIN_RCPP
+    Rcpp::RObject rcpp_result_gen;
+    Rcpp::traits::input_parameter< CharacterVector >::type names(namesSEXP);
+    Rcpp::traits::input_parameter< Environment >::type parent(parentSEXP);
+    Rcpp::traits::input_parameter< String >::type xform(xformSEXP);
+    rcpp_result_gen = Rcpp::wrap(do_stest_create_environment(names, parent, xform));
+    return rcpp_result_gen;
+END_RCPP_RETURN_ERROR
+}
+RcppExport SEXP RcppActiveBinding_do_stest_create_environment(SEXP namesSEXP, SEXP parentSEXP, SEXP xformSEXP) {
+    SEXP rcpp_result_gen;
+    {
+        Rcpp::RNGScope rcpp_rngScope_gen;
+        rcpp_result_gen = PROTECT(RcppActiveBinding_do_stest_create_environment_try(namesSEXP, parentSEXP, xformSEXP));
+    }
+    Rboolean rcpp_isInterrupt_gen = Rf_inherits(rcpp_result_gen, "interrupted-error");
+    if (rcpp_isInterrupt_gen) {
+        UNPROTECT(1);
+        Rf_onintr();
+    }
+    Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
+    if (rcpp_isError_gen) {
+        SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
+        UNPROTECT(1);
+        Rf_error(CHAR(rcpp_msgSEXP_gen));
+    }
+    UNPROTECT(1);
+    return rcpp_result_gen;
+}
 
 // validate (ensure exported C++ functions exist before calling them)
 static int RcppActiveBinding_RcppExport_validate(const char* sig) { 
@@ -80,6 +112,7 @@ static int RcppActiveBinding_RcppExport_validate(const char* sig) {
     if (signatures.empty()) {
         signatures.insert("SEXP(*create_environment)(CharacterVector,XPtr<GETTER_FUNC>,XPtr<void*>,Environment)");
         signatures.insert("SEXP(*callback)(String,List)");
+        signatures.insert("SEXP(*do_stest_create_environment)(CharacterVector,Environment,String)");
     }
     return signatures.find(sig) != signatures.end();
 }
@@ -88,6 +121,7 @@ static int RcppActiveBinding_RcppExport_validate(const char* sig) {
 RcppExport SEXP RcppActiveBinding_RcppExport_registerCCallable() { 
     R_RegisterCCallable("RcppActiveBinding", "RcppActiveBinding_create_environment", (DL_FUNC)RcppActiveBinding_create_environment_try);
     R_RegisterCCallable("RcppActiveBinding", "RcppActiveBinding_callback", (DL_FUNC)RcppActiveBinding_callback_try);
+    R_RegisterCCallable("RcppActiveBinding", "RcppActiveBinding_do_stest_create_environment", (DL_FUNC)RcppActiveBinding_do_stest_create_environment_try);
     R_RegisterCCallable("RcppActiveBinding", "RcppActiveBinding_RcppExport_validate", (DL_FUNC)RcppActiveBinding_RcppExport_validate);
     return R_NilValue;
 }
