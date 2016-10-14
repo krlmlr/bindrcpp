@@ -9,6 +9,7 @@ set(R_INCLUDE "/usr/share/R/include")
 include_directories(${R_LIBRARY}/Rcpp/include)
 include_directories(${R_INCLUDE})
 include_directories(inst/include)
+include_directories(src)
 
 file(GLOB SOURCE_FILES src/*.cpp src/*.c)
 add_library(RcppActiveBinding ${SOURCE_FILES})
