@@ -5,3 +5,4 @@
 ^src/.*\.d$
 ^src/Makevars\.local$
 ^clion-test\.R$
+^src/inst$
