@@ -1,0 +1,7 @@
+CXX_SOURCES = $(wildcard *.cpp)
+DEPFILES = ${CXX_SOURCES:.cpp=.d}
+include ${DEPFILES}
+
+# For better CLion output
+PKG_CPPFLAGS = -Iinst/include -I.
+
