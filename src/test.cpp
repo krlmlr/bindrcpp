@@ -17,7 +17,7 @@ SEXP callback(String name, List fun_payload) {
 }
 
 // [[Rcpp::export]]
-SEXP test_create_environment(CharacterVector names, Environment parent, String xform) {
+SEXP do_test_create_environment(CharacterVector names, String xform, Environment parent) {
   class callback {
     enum { MAGIC = 20161014 };
 
@@ -57,12 +57,12 @@ SEXP test_create_environment(CharacterVector names, Environment parent, String x
 
   callback c;
 
-  if (xform == "lower") {
+  if (xform == "tolower") {
     return RcppActiveBinding::create_environment(
       names, XPtr<GETTER_FUNC>(new GETTER_FUNC(&callback::tolower_static)),
       XPtr<void*>(new void*(&c)), parent);
   }
-  else if (xform == "upper") {
+  else if (xform == "toupper") {
     return RcppActiveBinding::create_environment(
       names, XPtr<GETTER_FUNC>(new GETTER_FUNC(&callback::toupper_static)),
       XPtr<void*>(new void*(&c)), parent);

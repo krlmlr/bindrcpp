@@ -5,8 +5,8 @@ callback <- function(name, fun_payload) {
     .Call('RcppActiveBinding_callback', PACKAGE = 'RcppActiveBinding', name, fun_payload)
 }
 
-test_create_environment <- function(names, parent, xform) {
-    .Call('RcppActiveBinding_test_create_environment', PACKAGE = 'RcppActiveBinding', names, parent, xform)
+do_test_create_environment <- function(names, xform, parent) {
+    .Call('RcppActiveBinding_do_test_create_environment', PACKAGE = 'RcppActiveBinding', names, xform, parent)
 }
 
 # Register entry points for exported C++ functions

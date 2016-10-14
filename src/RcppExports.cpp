@@ -54,16 +54,16 @@ BEGIN_RCPP
     return rcpp_result_gen;
 END_RCPP
 }
-// test_create_environment
-SEXP test_create_environment(CharacterVector names, Environment parent, String xform);
-RcppExport SEXP RcppActiveBinding_test_create_environment(SEXP namesSEXP, SEXP parentSEXP, SEXP xformSEXP) {
+// do_test_create_environment
+SEXP do_test_create_environment(CharacterVector names, String xform, Environment parent);
+RcppExport SEXP RcppActiveBinding_do_test_create_environment(SEXP namesSEXP, SEXP xformSEXP, SEXP parentSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::RNGScope rcpp_rngScope_gen;
     Rcpp::traits::input_parameter< CharacterVector >::type names(namesSEXP);
-    Rcpp::traits::input_parameter< Environment >::type parent(parentSEXP);
     Rcpp::traits::input_parameter< String >::type xform(xformSEXP);
-    rcpp_result_gen = Rcpp::wrap(test_create_environment(names, parent, xform));
+    Rcpp::traits::input_parameter< Environment >::type parent(parentSEXP);
+    rcpp_result_gen = Rcpp::wrap(do_test_create_environment(names, xform, parent));
     return rcpp_result_gen;
 END_RCPP
 }
