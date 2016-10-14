@@ -1,3 +1,9 @@
+create_callback_environment <- function(names, fun_payload, parent) {
+  force(fun_payload)
+  callback_fun <- function() callback(fun_payload)
+  create_environment(names, callback_fun, parent)
+}
+
 create_environment <- function(names, fun, parent = parent.frame()) {
   env <- new.env(parent = parent, size = length(names))
   lapply(names, function(name) {

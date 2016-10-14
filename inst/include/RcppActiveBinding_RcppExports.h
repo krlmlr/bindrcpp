@@ -4,6 +4,7 @@
 #ifndef RCPP_RcppActiveBinding_RCPPEXPORTS_H_GEN_
 #define RCPP_RcppActiveBinding_RCPPEXPORTS_H_GEN_
 
+#include "RcppActiveBinding_types.h"
 #include <Rcpp.h>
 
 namespace RcppActiveBinding {
@@ -22,6 +23,44 @@ namespace RcppActiveBinding {
                     "C++ function with signature '" + std::string(sig) + "' not found in RcppActiveBinding");
             }
         }
+    }
+
+    inline SEXP create_environment(CharacterVector names, XPtr<GETTER_FUNC> fun, XPtr<void*> payload, Environment parent) {
+        typedef SEXP(*Ptr_create_environment)(SEXP,SEXP,SEXP,SEXP);
+        static Ptr_create_environment p_create_environment = NULL;
+        if (p_create_environment == NULL) {
+            validateSignature("SEXP(*create_environment)(CharacterVector,XPtr<GETTER_FUNC>,XPtr<void*>,Environment)");
+            p_create_environment = (Ptr_create_environment)R_GetCCallable("RcppActiveBinding", "RcppActiveBinding_create_environment");
+        }
+        RObject rcpp_result_gen;
+        {
+            RNGScope RCPP_rngScope_gen;
+            rcpp_result_gen = p_create_environment(Rcpp::wrap(names), Rcpp::wrap(fun), Rcpp::wrap(payload), Rcpp::wrap(parent));
+        }
+        if (rcpp_result_gen.inherits("interrupted-error"))
+            throw Rcpp::internal::InterruptedException();
+        if (rcpp_result_gen.inherits("try-error"))
+            throw Rcpp::exception(as<std::string>(rcpp_result_gen).c_str());
+        return Rcpp::as<SEXP >(rcpp_result_gen);
+    }
+
+    inline SEXP callback(String name, List fun_payload) {
+        typedef SEXP(*Ptr_callback)(SEXP,SEXP);
+        static Ptr_callback p_callback = NULL;
+        if (p_callback == NULL) {
+            validateSignature("SEXP(*callback)(String,List)");
+            p_callback = (Ptr_callback)R_GetCCallable("RcppActiveBinding", "RcppActiveBinding_callback");
+        }
+        RObject rcpp_result_gen;
+        {
+            RNGScope RCPP_rngScope_gen;
+            rcpp_result_gen = p_callback(Rcpp::wrap(name), Rcpp::wrap(fun_payload));
+        }
+        if (rcpp_result_gen.inherits("interrupted-error"))
+            throw Rcpp::internal::InterruptedException();
+        if (rcpp_result_gen.inherits("try-error"))
+            throw Rcpp::exception(as<std::string>(rcpp_result_gen).c_str());
+        return Rcpp::as<SEXP >(rcpp_result_gen);
     }
 
 }
