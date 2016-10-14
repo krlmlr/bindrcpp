@@ -42,6 +42,16 @@ RcppExport SEXP RcppActiveBinding_create_environment(SEXP namesSEXP, SEXP funSEX
     UNPROTECT(1);
     return rcpp_result_gen;
 }
+// init_logging
+void init_logging(const std::string& log_level);
+RcppExport SEXP RcppActiveBinding_init_logging(SEXP log_levelSEXP) {
+BEGIN_RCPP
+    Rcpp::RNGScope rcpp_rngScope_gen;
+    Rcpp::traits::input_parameter< const std::string& >::type log_level(log_levelSEXP);
+    init_logging(log_level);
+    return R_NilValue;
+END_RCPP
+}
 // callback
 SEXP callback(String name, List fun_payload);
 RcppExport SEXP RcppActiveBinding_callback(SEXP nameSEXP, SEXP fun_payloadSEXP) {
