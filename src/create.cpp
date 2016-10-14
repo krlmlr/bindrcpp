@@ -8,6 +8,6 @@ typedef SEXP (*GETTER_FUNC)(String name, void* payload);
 
 // [Rcpp::export]
 // [[Rcpp::interfaces(cpp)]]
-SEXP create_environment(CharacterVector names, GETTER_FUNC fun, void* payload, Environment parent) {
+SEXP create_environment(CharacterVector names, XPtr<GETTER_FUNC> fun, XPtr<void*> payload, Environment parent) {
   return R_NilValue;
 }
