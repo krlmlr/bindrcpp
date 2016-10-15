@@ -1,6 +1,13 @@
+## bindrcpp 0.0-4 (2016-10-16)
+
+- Rename to `bindrcpp`.
+- New `populate_env()`.
+
+
 ## bindrcpp 0.0-3 (2016-10-16)
 
 - Use new `bindr` package.
+- Function is called `create_env()`.
 
 
 ## bindrcpp 0.0-2 (2016-10-15)
