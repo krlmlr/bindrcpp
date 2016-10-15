@@ -5,9 +5,8 @@ Description: Provides an easy way to fill an environment with active bindings
 Authors@R: person("Kirill", "Müller", role = c("aut", "cre"), email = "krlmlr+r@mailbox.org")
 Version: 0.0-2
 Date: 2016-10-15
-URLNote: https://github.com/krlmlr/
-BugReports: https://github.com/krlmlr/
-URL: http://krlmlr.github.io/
+URL: https://github.com/krlmlr/RcppActiveBinding
+BugReports: https://github.com/krlmlr/RcppActiveBinding/issues
 Imports: Rcpp
 Suggests: testthat
 LinkingTo: Rcpp, plogr
