@@ -63,3 +63,8 @@ env$LOWERCASE
 env$y
 #> NULL
 ```
+
+``` r
+env$Converting <- "CONVERTING"
+#> Error in (function (value) : Binding is read-only.
+```

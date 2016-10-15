@@ -74,3 +74,7 @@ env$to
 env$LOWERCASE
 env$y
 ```
+
+```{r failing, error=TRUE}
+env$Converting <- "CONVERTING"
+```
