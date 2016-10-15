@@ -17,7 +17,7 @@ new_active_binding_fun <- function(name, fun) {
   force(name)
   eval(bquote(function(value) {
     if (!missing(value)) {
-      stop("Binding is read-only.")
+      stop("Binding is read-only.", call. = FALSE)
     }
     fun(.(name))
   }))
