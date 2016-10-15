@@ -6,14 +6,25 @@
 
 using namespace Rcpp;
 
-Function getNamespace = Function("getNamespace", Environment("package:base"));
-Function create_callback_environment = Environment(getNamespace("RcppActiveBinding"))["create_callback_environment"];
+Environment pkg_env = Environment::namespace_env("RcppActiveBinding");
+Function R_create_env("create_env", pkg_env);
+Function R_populate_env("populate_env", pkg_env);
+Function R_callback("callback", pkg_env);
 
 // [[Rcpp::interfaces(cpp)]]
 // [[Rcpp::export]]
-SEXP create_environment(CharacterVector names, XPtr<GETTER_FUNC> fun, XPtr<PAYLOAD> payload, Environment parent) {
-  List fun_payload = List::create(_["fun"] = fun, _["payload"] = payload);
+SEXP create_env(CharacterVector names, XPtr<GETTER_FUNC> fun, XPtr<PAYLOAD> payload, Environment enclos) {
   LOG_VERBOSE << payload.get();
-
-  return create_callback_environment(names, fun_payload, parent);
+  return R_create_env(names, R_callback, fun, payload, _[".enclos"] = enclos);
 }
+
+#if 0
+
+// -[[Rcpp::interfaces(cpp)]]
+// -[[Rcpp::export]]
+SEXP populate_env(Environment env, CharacterVector names, XPtr<GETTER_FUNC> fun, XPtr<PAYLOAD> payload) {
+  LOG_VERBOSE << payload.get();
+  return R_populate_env(env, names, R_callback, fun, payload);
+}
+
+#endif

@@ -25,17 +25,17 @@ namespace RcppActiveBinding {
         }
     }
 
-    inline SEXP create_environment(CharacterVector names, XPtr<GETTER_FUNC> fun, XPtr<PAYLOAD> payload, Environment parent) {
-        typedef SEXP(*Ptr_create_environment)(SEXP,SEXP,SEXP,SEXP);
-        static Ptr_create_environment p_create_environment = NULL;
-        if (p_create_environment == NULL) {
-            validateSignature("SEXP(*create_environment)(CharacterVector,XPtr<GETTER_FUNC>,XPtr<PAYLOAD>,Environment)");
-            p_create_environment = (Ptr_create_environment)R_GetCCallable("RcppActiveBinding", "RcppActiveBinding_create_environment");
+    inline SEXP create_env(CharacterVector names, XPtr<GETTER_FUNC> fun, XPtr<PAYLOAD> payload, Environment enclos) {
+        typedef SEXP(*Ptr_create_env)(SEXP,SEXP,SEXP,SEXP);
+        static Ptr_create_env p_create_env = NULL;
+        if (p_create_env == NULL) {
+            validateSignature("SEXP(*create_env)(CharacterVector,XPtr<GETTER_FUNC>,XPtr<PAYLOAD>,Environment)");
+            p_create_env = (Ptr_create_env)R_GetCCallable("RcppActiveBinding", "RcppActiveBinding_create_env");
         }
         RObject rcpp_result_gen;
         {
             RNGScope RCPP_rngScope_gen;
-            rcpp_result_gen = p_create_environment(Rcpp::wrap(names), Rcpp::wrap(fun), Rcpp::wrap(payload), Rcpp::wrap(parent));
+            rcpp_result_gen = p_create_env(Rcpp::wrap(names), Rcpp::wrap(fun), Rcpp::wrap(payload), Rcpp::wrap(enclos));
         }
         if (rcpp_result_gen.inherits("interrupted-error"))
             throw Rcpp::internal::InterruptedException();

@@ -9,17 +9,17 @@
 
 using namespace Rcpp;
 
-// [[Rcpp::export]]
-SEXP callback(String name, List fun_payload) {
-  XPtr<GETTER_FUNC> xfun = fun_payload["fun"];
-  XPtr<PAYLOAD> xpayload = fun_payload["payload"];
-
+// [[Rcpp::export(rng = FALSE)]]
+SEXP callback(Symbol name, XPtr<GETTER_FUNC> xfun, XPtr<PAYLOAD> xpayload) {
   GETTER_FUNC* pfun = xfun.get();
   PAYLOAD* payload = xpayload.get();
 
   LOG_VERBOSE << payload;
 
-  return (*pfun)(name, *payload);
+  String name_string = name.c_str();
+  name_string.set_encoding(CE_NATIVE);
+
+  return (*pfun)(name_string, *payload);
 }
 
 class CallbackTester {
@@ -76,7 +76,7 @@ SEXP do_test_create_environment(CharacterVector names, String xform, Environment
     PAYLOAD* ppayload = new PAYLOAD(&c);
     LOG_VERBOSE << ppayload;
 
-    return RcppActiveBinding::create_environment(
+    return RcppActiveBinding::create_env(
       names, XPtr<GETTER_FUNC>(new GETTER_FUNC(&CallbackTester::tolower_static)),
       XPtr<PAYLOAD>(ppayload), parent);
   }
@@ -84,7 +84,7 @@ SEXP do_test_create_environment(CharacterVector names, String xform, Environment
     PAYLOAD* ppayload = new PAYLOAD(&c);
     LOG_VERBOSE << ppayload;
 
-    return RcppActiveBinding::create_environment(
+    return RcppActiveBinding::create_env(
       names, XPtr<GETTER_FUNC>(new GETTER_FUNC(&CallbackTester::toupper_static)),
       XPtr<PAYLOAD>(ppayload), parent);
   }
