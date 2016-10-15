@@ -3,4 +3,4 @@
 importFrom(Rcpp,sourceCpp)
 importFrom(bindr,create_env)
 importFrom(bindr,populate_env)
-useDynLib(RcppActiveBinding)
+useDynLib(bindrcpp)

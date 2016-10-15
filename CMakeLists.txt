@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.6)
-project(RcppActiveBinding)
+project(bindrcpp)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
 
@@ -13,10 +13,10 @@ include_directories(inst/include)
 include_directories(src)
 
 file(GLOB SOURCE_FILES src/*.cpp src/*.c)
-add_library(RcppActiveBinding ${SOURCE_FILES})
+add_library(bindrcpp ${SOURCE_FILES})
 
 add_custom_target(
     Rinstall
     # Using MAKEFLAGS=-j$(nproc) didn't work
-    COMMAND MAKEFLAGS=-j4 nice R CMD INSTALL --libs-only --no-test-load ${RcppActiveBinding_SOURCE_DIR}
+    COMMAND MAKEFLAGS=-j4 nice R CMD INSTALL --libs-only --no-test-load ${bindrcpp_SOURCE_DIR}
 )

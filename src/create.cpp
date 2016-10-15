@@ -1,12 +1,12 @@
 #include <Rcpp.h>
 
-#include <RcppActiveBinding.h>
+#include <bindrcpp.h>
 
 #include <plogr.h>
 
 using namespace Rcpp;
 
-Environment pkg_env = Environment::namespace_env("RcppActiveBinding");
+Environment pkg_env = Environment::namespace_env("bindrcpp");
 Function R_create_env("create_env", pkg_env);
 Function R_populate_env("populate_env", pkg_env);
 Function R_callback("callback", pkg_env);

@@ -1,4 +1,4 @@
 library(testthat)
-library(RcppActiveBinding)
+library(bindrcpp)
 
-test_check("RcppActiveBinding")
+test_check("bindrcpp")

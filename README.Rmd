@@ -12,7 +12,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# RcppActiveBinding [![Travis-CI Build Status](https://travis-ci.org/krlmlr/RcppActiveBinding.svg?branch=master)](https://travis-ci.org/krlmlr/RcppActiveBinding)
+# bindrcpp [![Travis-CI Build Status](https://travis-ci.org/krlmlr/bindrcpp.svg?branch=master)](https://travis-ci.org/krlmlr/bindrcpp)
 
 
 It's easy to create active bindings in R via
@@ -24,11 +24,11 @@ to the same C++ function, which is then called with the name (and a payload) as 
 
 ## Installation
 
-You can install RcppActiveBinding from github with:
+You can install bindrcpp from github with:
 
 ```{r gh-installation, eval = FALSE}
 # install.packages("devtools")
-devtools::install_github("krlmlr/RcppActiveBinding")
+devtools::install_github("krlmlr/bindrcpp")
 ```
 
 ## Example
@@ -39,8 +39,8 @@ that creates active bindings that return the binding name in lowercase.
 ```{Rcpp}
 #include <Rcpp.h>
 
-// [[Rcpp::depends(RcppActiveBinding)]]
-#include <RcppActiveBinding.h>
+// [[Rcpp::depends(bindrcpp)]]
+#include <bindrcpp.h>
 
 #include <algorithm>
 #include <string>
@@ -58,7 +58,7 @@ SEXP test_tolower_bindings(CharacterVector names, Environment parent) {
   // A void* can be passed here, but we don't use this functionality here
   PAYLOAD* payload = new PAYLOAD();
   
-  return RcppActiveBinding::create_env(
+  return bindrcpp::create_env(
     names, XPtr<GETTER_FUNC>(new GETTER_FUNC(&tolower_callback)),
     XPtr<PAYLOAD>(payload), parent);
 }
