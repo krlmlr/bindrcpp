@@ -9,7 +9,7 @@
 
 using namespace Rcpp;
 
-// [[Rcpp::export]]
+// [[Rcpp::export(rng = FALSE)]]
 SEXP callback(String name, List fun_payload) {
   XPtr<GETTER_FUNC> xfun = fun_payload["fun"];
   XPtr<PAYLOAD> xpayload = fun_payload["payload"];
