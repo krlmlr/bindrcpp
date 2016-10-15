@@ -7,7 +7,8 @@
 using namespace Rcpp;
 
 Function getNamespace = Function("getNamespace", Environment("package:base"));
-Function create_callback_environment = Environment(getNamespace("RcppActiveBinding"))["create_callback_environment"];
+Function R_create_environment = Environment(getNamespace("RcppActiveBinding"))["create_environment"];
+Function R_callback = Environment(getNamespace("RcppActiveBinding"))["callback"];
 
 // [[Rcpp::interfaces(cpp)]]
 // [[Rcpp::export]]
@@ -15,5 +16,5 @@ SEXP create_environment(CharacterVector names, XPtr<GETTER_FUNC> fun, XPtr<PAYLO
   List fun_payload = List::create(_["fun"] = fun, _["payload"] = payload);
   LOG_VERBOSE << payload.get();
 
-  return create_callback_environment(names, fun_payload, parent);
+  return R_create_environment(names, R_callback, fun_payload, _["parent"] = parent);
 }
