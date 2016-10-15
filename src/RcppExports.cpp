@@ -10,13 +10,13 @@
 using namespace Rcpp;
 
 // create_env
-SEXP create_env(CharacterVector names, XPtr<GETTER_FUNC> fun, XPtr<PAYLOAD> payload, Environment enclos);
+SEXP create_env(CharacterVector names, XPtr<bindrcpp::GETTER_FUNC> fun, XPtr<bindrcpp::PAYLOAD> payload, Environment enclos);
 static SEXP bindrcpp_create_env_try(SEXP namesSEXP, SEXP funSEXP, SEXP payloadSEXP, SEXP enclosSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< CharacterVector >::type names(namesSEXP);
-    Rcpp::traits::input_parameter< XPtr<GETTER_FUNC> >::type fun(funSEXP);
-    Rcpp::traits::input_parameter< XPtr<PAYLOAD> >::type payload(payloadSEXP);
+    Rcpp::traits::input_parameter< XPtr<bindrcpp::GETTER_FUNC> >::type fun(funSEXP);
+    Rcpp::traits::input_parameter< XPtr<bindrcpp::PAYLOAD> >::type payload(payloadSEXP);
     Rcpp::traits::input_parameter< Environment >::type enclos(enclosSEXP);
     rcpp_result_gen = Rcpp::wrap(create_env(names, fun, payload, enclos));
     return rcpp_result_gen;
@@ -43,14 +43,14 @@ RcppExport SEXP bindrcpp_create_env(SEXP namesSEXP, SEXP funSEXP, SEXP payloadSE
     return rcpp_result_gen;
 }
 // populate_env
-SEXP populate_env(Environment env, CharacterVector names, XPtr<GETTER_FUNC> fun, XPtr<PAYLOAD> payload);
+SEXP populate_env(Environment env, CharacterVector names, XPtr<bindrcpp::GETTER_FUNC> fun, XPtr<bindrcpp::PAYLOAD> payload);
 static SEXP bindrcpp_populate_env_try(SEXP envSEXP, SEXP namesSEXP, SEXP funSEXP, SEXP payloadSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< Environment >::type env(envSEXP);
     Rcpp::traits::input_parameter< CharacterVector >::type names(namesSEXP);
-    Rcpp::traits::input_parameter< XPtr<GETTER_FUNC> >::type fun(funSEXP);
-    Rcpp::traits::input_parameter< XPtr<PAYLOAD> >::type payload(payloadSEXP);
+    Rcpp::traits::input_parameter< XPtr<bindrcpp::GETTER_FUNC> >::type fun(funSEXP);
+    Rcpp::traits::input_parameter< XPtr<bindrcpp::PAYLOAD> >::type payload(payloadSEXP);
     rcpp_result_gen = Rcpp::wrap(populate_env(env, names, fun, payload));
     return rcpp_result_gen;
 END_RCPP_RETURN_ERROR
@@ -86,13 +86,13 @@ BEGIN_RCPP
 END_RCPP
 }
 // callback
-SEXP callback(Symbol name, XPtr<GETTER_FUNC> xfun, XPtr<PAYLOAD> xpayload);
+SEXP callback(Symbol name, XPtr<bindrcpp::GETTER_FUNC> xfun, XPtr<bindrcpp::PAYLOAD> xpayload);
 RcppExport SEXP bindrcpp_callback(SEXP nameSEXP, SEXP xfunSEXP, SEXP xpayloadSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< Symbol >::type name(nameSEXP);
-    Rcpp::traits::input_parameter< XPtr<GETTER_FUNC> >::type xfun(xfunSEXP);
-    Rcpp::traits::input_parameter< XPtr<PAYLOAD> >::type xpayload(xpayloadSEXP);
+    Rcpp::traits::input_parameter< XPtr<bindrcpp::GETTER_FUNC> >::type xfun(xfunSEXP);
+    Rcpp::traits::input_parameter< XPtr<bindrcpp::PAYLOAD> >::type xpayload(xpayloadSEXP);
     rcpp_result_gen = Rcpp::wrap(callback(name, xfun, xpayload));
     return rcpp_result_gen;
 END_RCPP
@@ -115,8 +115,8 @@ END_RCPP
 static int bindrcpp_RcppExport_validate(const char* sig) { 
     static std::set<std::string> signatures;
     if (signatures.empty()) {
-        signatures.insert("SEXP(*create_env)(CharacterVector,XPtr<GETTER_FUNC>,XPtr<PAYLOAD>,Environment)");
-        signatures.insert("SEXP(*populate_env)(Environment,CharacterVector,XPtr<GETTER_FUNC>,XPtr<PAYLOAD>)");
+        signatures.insert("SEXP(*create_env)(CharacterVector,XPtr<bindrcpp::GETTER_FUNC>,XPtr<bindrcpp::PAYLOAD>,Environment)");
+        signatures.insert("SEXP(*populate_env)(Environment,CharacterVector,XPtr<bindrcpp::GETTER_FUNC>,XPtr<bindrcpp::PAYLOAD>)");
     }
     return signatures.find(sig) != signatures.end();
 }

@@ -9,8 +9,10 @@
 
 using namespace Rcpp;
 
+using namespace bindrcpp;
+
 // [[Rcpp::export(rng = FALSE)]]
-SEXP callback(Symbol name, XPtr<GETTER_FUNC> xfun, XPtr<PAYLOAD> xpayload) {
+SEXP callback(Symbol name, XPtr<bindrcpp::GETTER_FUNC> xfun, XPtr<bindrcpp::PAYLOAD> xpayload) {
   GETTER_FUNC* pfun = xfun.get();
   PAYLOAD* payload = xpayload.get();
 

@@ -3,7 +3,11 @@
 
 #include <Rcpp.h>
 
+namespace bindrcpp {
+
 typedef void* PAYLOAD;
-typedef SEXP (*GETTER_FUNC)(Rcpp::String name, PAYLOAD payload);
+typedef SEXP (*GETTER_FUNC)(Rcpp::String name, bindrcpp::PAYLOAD payload);
+
+}
 
 #endif

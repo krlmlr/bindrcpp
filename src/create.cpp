@@ -13,14 +13,14 @@ Function R_callback("callback", pkg_env);
 
 // [[Rcpp::interfaces(cpp)]]
 // [[Rcpp::export]]
-SEXP create_env(CharacterVector names, XPtr<GETTER_FUNC> fun, XPtr<PAYLOAD> payload, Environment enclos) {
+SEXP create_env(CharacterVector names, XPtr<bindrcpp::GETTER_FUNC> fun, XPtr<bindrcpp::PAYLOAD> payload, Environment enclos) {
   LOG_VERBOSE << payload.get();
   return R_create_env(names, R_callback, fun, payload, _[".enclos"] = enclos);
 }
 
 // [[Rcpp::interfaces(cpp)]]
 // [[Rcpp::export]]
-SEXP populate_env(Environment env, CharacterVector names, XPtr<GETTER_FUNC> fun, XPtr<PAYLOAD> payload) {
+SEXP populate_env(Environment env, CharacterVector names, XPtr<bindrcpp::GETTER_FUNC> fun, XPtr<bindrcpp::PAYLOAD> payload) {
   LOG_VERBOSE << payload.get();
   return R_populate_env(env, names, R_callback, fun, payload);
 }

@@ -25,11 +25,11 @@ namespace bindrcpp {
         }
     }
 
-    inline SEXP create_env(CharacterVector names, XPtr<GETTER_FUNC> fun, XPtr<PAYLOAD> payload, Environment enclos) {
+    inline SEXP create_env(CharacterVector names, XPtr<bindrcpp::GETTER_FUNC> fun, XPtr<bindrcpp::PAYLOAD> payload, Environment enclos) {
         typedef SEXP(*Ptr_create_env)(SEXP,SEXP,SEXP,SEXP);
         static Ptr_create_env p_create_env = NULL;
         if (p_create_env == NULL) {
-            validateSignature("SEXP(*create_env)(CharacterVector,XPtr<GETTER_FUNC>,XPtr<PAYLOAD>,Environment)");
+            validateSignature("SEXP(*create_env)(CharacterVector,XPtr<bindrcpp::GETTER_FUNC>,XPtr<bindrcpp::PAYLOAD>,Environment)");
             p_create_env = (Ptr_create_env)R_GetCCallable("bindrcpp", "bindrcpp_create_env");
         }
         RObject rcpp_result_gen;
@@ -44,11 +44,11 @@ namespace bindrcpp {
         return Rcpp::as<SEXP >(rcpp_result_gen);
     }
 
-    inline SEXP populate_env(Environment env, CharacterVector names, XPtr<GETTER_FUNC> fun, XPtr<PAYLOAD> payload) {
+    inline SEXP populate_env(Environment env, CharacterVector names, XPtr<bindrcpp::GETTER_FUNC> fun, XPtr<bindrcpp::PAYLOAD> payload) {
         typedef SEXP(*Ptr_populate_env)(SEXP,SEXP,SEXP,SEXP);
         static Ptr_populate_env p_populate_env = NULL;
         if (p_populate_env == NULL) {
-            validateSignature("SEXP(*populate_env)(Environment,CharacterVector,XPtr<GETTER_FUNC>,XPtr<PAYLOAD>)");
+            validateSignature("SEXP(*populate_env)(Environment,CharacterVector,XPtr<bindrcpp::GETTER_FUNC>,XPtr<bindrcpp::PAYLOAD>)");
             p_populate_env = (Ptr_populate_env)R_GetCCallable("bindrcpp", "bindrcpp_populate_env");
         }
         RObject rcpp_result_gen;
