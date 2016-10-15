@@ -68,5 +68,5 @@ The bindings are read-only:
 
 ``` r
 env$Converting <- "CONVERTING"
-#> Error in (function (value) : Binding is read-only.
+#> Error: Binding is read-only.
 ```
