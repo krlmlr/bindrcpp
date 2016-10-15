@@ -10,10 +10,10 @@ create_environment <- function(names, fun, ..., parent = parent.frame()) {
 new_active_binding_fun <- function(name, fun, ...) {
   force(name)
   list(...)
-  eval(bquote(function(value) {
+  function(value) {
     if (!missing(value)) {
       stop("Binding is read-only.", call. = FALSE)
     }
-    fun(.(name), ...)
-  }))
+    fun(name, ...)
+  }
 }
