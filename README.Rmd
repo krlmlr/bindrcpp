@@ -75,6 +75,8 @@ env$LOWERCASE
 env$y
 ```
 
+The bindings are read-only:
+
 ```{r failing, error=TRUE}
 env$Converting <- "CONVERTING"
 ```
