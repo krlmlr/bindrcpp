@@ -14,8 +14,8 @@ init_logging <- function(log_level) {
     invisible(.Call('RcppActiveBinding_init_logging', PACKAGE = 'RcppActiveBinding', log_level))
 }
 
-callback <- function(name, fun_payload) {
-    .Call('RcppActiveBinding_callback', PACKAGE = 'RcppActiveBinding', name, fun_payload)
+callback <- function(name, xfun, xpayload) {
+    .Call('RcppActiveBinding_callback', PACKAGE = 'RcppActiveBinding', name, xfun, xpayload)
 }
 
 do_test_create_environment <- function(names, xform, parent) {
