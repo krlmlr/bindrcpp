@@ -1,5 +1,5 @@
-#ifndef _RcppActiveBinding_RcppActiveBinding_types_H_
-#define _RcppActiveBinding_RcppActiveBinding_types_H_
+#ifndef _bindrcpp_bindrcpp_types_H_
+#define _bindrcpp_bindrcpp_types_H_
 
 #include <Rcpp.h>
 

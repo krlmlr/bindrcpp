@@ -1,6 +1,6 @@
 #include <Rcpp.h>
 
-#include <RcppActiveBinding.h>
+#include <bindrcpp.h>
 
 #include <plogr.h>
 
@@ -76,7 +76,7 @@ SEXP do_test_create_environment(CharacterVector names, String xform, Environment
     PAYLOAD* ppayload = new PAYLOAD(&c);
     LOG_VERBOSE << ppayload;
 
-    return RcppActiveBinding::create_env(
+    return bindrcpp::create_env(
       names, XPtr<GETTER_FUNC>(new GETTER_FUNC(&CallbackTester::tolower_static)),
       XPtr<PAYLOAD>(ppayload), parent);
   }
@@ -84,7 +84,7 @@ SEXP do_test_create_environment(CharacterVector names, String xform, Environment
     PAYLOAD* ppayload = new PAYLOAD(&c);
     LOG_VERBOSE << ppayload;
 
-    return RcppActiveBinding::create_env(
+    return bindrcpp::create_env(
       names, XPtr<GETTER_FUNC>(new GETTER_FUNC(&CallbackTester::toupper_static)),
       XPtr<PAYLOAD>(ppayload), parent);
   }

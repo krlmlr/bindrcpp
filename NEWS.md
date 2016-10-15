@@ -1,14 +1,21 @@
-## RcppActiveBinding 0.0-3 (2016-10-16)
+## bindrcpp 0.0-4 (2016-10-16)
+
+- Rename to `bindrcpp`.
+- New `populate_env()`.
+
+
+## bindrcpp 0.0-3 (2016-10-16)
 
 - Use new `bindr` package.
+- Function is called `create_env()`.
 
 
-## RcppActiveBinding 0.0-2 (2016-10-15)
+## bindrcpp 0.0-2 (2016-10-15)
 
 - Now also works when package is loaded by R and not `devtools`.
  
 
-## RcppActiveBinding 0.0-1 (2016-10-15)
+## bindrcpp 0.0-1 (2016-10-15)
 
 - Initial release
 - No R functions exported

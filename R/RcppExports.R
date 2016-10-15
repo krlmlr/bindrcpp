@@ -11,18 +11,18 @@
 #'
 #' @keywords internal
 init_logging <- function(log_level) {
-    invisible(.Call('RcppActiveBinding_init_logging', PACKAGE = 'RcppActiveBinding', log_level))
+    invisible(.Call('bindrcpp_init_logging', PACKAGE = 'bindrcpp', log_level))
 }
 
 callback <- function(name, xfun, xpayload) {
-    .Call('RcppActiveBinding_callback', PACKAGE = 'RcppActiveBinding', name, xfun, xpayload)
+    .Call('bindrcpp_callback', PACKAGE = 'bindrcpp', name, xfun, xpayload)
 }
 
 do_test_create_environment <- function(names, xform, parent) {
-    .Call('RcppActiveBinding_do_test_create_environment', PACKAGE = 'RcppActiveBinding', names, xform, parent)
+    .Call('bindrcpp_do_test_create_environment', PACKAGE = 'bindrcpp', names, xform, parent)
 }
 
 # Register entry points for exported C++ functions
 methods::setLoadAction(function(ns) {
-    .Call('RcppActiveBinding_RcppExport_registerCCallable', PACKAGE = 'RcppActiveBinding')
+    .Call('bindrcpp_RcppExport_registerCCallable', PACKAGE = 'bindrcpp')
 })
