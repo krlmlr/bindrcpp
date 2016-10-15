@@ -44,6 +44,25 @@ namespace RcppActiveBinding {
         return Rcpp::as<SEXP >(rcpp_result_gen);
     }
 
+    inline SEXP populate_env(Environment env, CharacterVector names, XPtr<GETTER_FUNC> fun, XPtr<PAYLOAD> payload) {
+        typedef SEXP(*Ptr_populate_env)(SEXP,SEXP,SEXP,SEXP);
+        static Ptr_populate_env p_populate_env = NULL;
+        if (p_populate_env == NULL) {
+            validateSignature("SEXP(*populate_env)(Environment,CharacterVector,XPtr<GETTER_FUNC>,XPtr<PAYLOAD>)");
+            p_populate_env = (Ptr_populate_env)R_GetCCallable("RcppActiveBinding", "RcppActiveBinding_populate_env");
+        }
+        RObject rcpp_result_gen;
+        {
+            RNGScope RCPP_rngScope_gen;
+            rcpp_result_gen = p_populate_env(Rcpp::wrap(env), Rcpp::wrap(names), Rcpp::wrap(fun), Rcpp::wrap(payload));
+        }
+        if (rcpp_result_gen.inherits("interrupted-error"))
+            throw Rcpp::internal::InterruptedException();
+        if (rcpp_result_gen.inherits("try-error"))
+            throw Rcpp::exception(as<std::string>(rcpp_result_gen).c_str());
+        return Rcpp::as<SEXP >(rcpp_result_gen);
+    }
+
 }
 
 #endif // RCPP_RcppActiveBinding_RCPPEXPORTS_H_GEN_

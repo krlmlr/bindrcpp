@@ -18,13 +18,9 @@ SEXP create_env(CharacterVector names, XPtr<GETTER_FUNC> fun, XPtr<PAYLOAD> payl
   return R_create_env(names, R_callback, fun, payload, _[".enclos"] = enclos);
 }
 
-#if 0
-
-// -[[Rcpp::interfaces(cpp)]]
-// -[[Rcpp::export]]
+// [[Rcpp::interfaces(cpp)]]
+// [[Rcpp::export]]
 SEXP populate_env(Environment env, CharacterVector names, XPtr<GETTER_FUNC> fun, XPtr<PAYLOAD> payload) {
   LOG_VERBOSE << payload.get();
   return R_populate_env(env, names, R_callback, fun, payload);
 }
-
-#endif
