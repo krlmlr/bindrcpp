@@ -9,7 +9,7 @@ namespace Rcpp {
 
 namespace bindrcpp {
 
-struct PAYLOAD { void* p; PAYLOAD(void* p_) : p(p_) {}; operator void*() const { return p; } };
+struct PAYLOAD { void* p; explicit PAYLOAD(void* p_) : p(p_) {}; };
 typedef SEXP (*GETTER_FUNC)(const Rcpp::String& name, bindrcpp::PAYLOAD payload);
 
 }

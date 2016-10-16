@@ -13,7 +13,7 @@ using namespace bindrcpp;
 
 // [[Rcpp::export(rng = FALSE)]]
 SEXP callback(Symbol name, bindrcpp::GETTER_FUNC fun, bindrcpp::PAYLOAD payload) {
-  LOG_VERBOSE << payload;
+  LOG_VERBOSE << payload.p;
 
   String name_string = name.c_str();
   name_string.set_encoding(CE_NATIVE);
@@ -30,13 +30,13 @@ public:
   ~CallbackTester() { LOG_VERBOSE; }
 
   static SEXP tolower_static(const Rcpp::String& name, PAYLOAD payload) {
-    LOG_VERBOSE << payload;
+    LOG_VERBOSE << payload.p;
     CallbackTester* this_ = reinterpret_cast<CallbackTester*>(payload.p);
     return this_->tolower(name);
   }
 
   static SEXP toupper_static(const Rcpp::String& name, PAYLOAD payload) {
-    LOG_VERBOSE << payload;
+    LOG_VERBOSE << payload.p;
     CallbackTester* this_ = reinterpret_cast<CallbackTester*>(payload.p);
     return this_->toupper(name);
   }

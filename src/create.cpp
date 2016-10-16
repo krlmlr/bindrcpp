@@ -16,7 +16,7 @@ Function R_callback("callback", pkg_env);
 Environment create_env_imp(CharacterVector names, bindrcpp::GETTER_FUNC fun, bindrcpp::PAYLOAD payload, Environment enclos) {
   using namespace bindrcpp;
 
-  LOG_VERBOSE << payload;
+  LOG_VERBOSE << payload.p;
   return R_create_env(names, R_callback, wrap(fun), wrap(payload), _[".enclos"] = enclos);
 }
 
@@ -25,6 +25,6 @@ Environment create_env_imp(CharacterVector names, bindrcpp::GETTER_FUNC fun, bin
 Environment populate_env_imp(Environment env, CharacterVector names, bindrcpp::GETTER_FUNC fun, bindrcpp::PAYLOAD payload) {
   using namespace bindrcpp;
 
-  LOG_VERBOSE << payload;
+  LOG_VERBOSE << payload.p;
   return R_populate_env(env, names, R_callback, wrap(fun), wrap(payload));
 }
