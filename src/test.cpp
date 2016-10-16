@@ -12,16 +12,13 @@ using namespace Rcpp;
 using namespace bindrcpp;
 
 // [[Rcpp::export(rng = FALSE)]]
-SEXP callback(Symbol name, XPtr<bindrcpp::GETTER_FUNC> xfun, XPtr<bindrcpp::PAYLOAD> xpayload) {
-  GETTER_FUNC* pfun = xfun.get();
-  PAYLOAD* payload = xpayload.get();
-
+SEXP callback(Symbol name, bindrcpp::GETTER_FUNC fun, bindrcpp::PAYLOAD payload) {
   LOG_VERBOSE << payload;
 
   String name_string = name.c_str();
   name_string.set_encoding(CE_NATIVE);
 
-  return (*pfun)(name_string, *payload);
+  return fun(name_string, payload);
 }
 
 class CallbackTester {

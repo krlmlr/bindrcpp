@@ -86,13 +86,13 @@ BEGIN_RCPP
 END_RCPP
 }
 // callback
-SEXP callback(Symbol name, XPtr<bindrcpp::GETTER_FUNC> xfun, XPtr<bindrcpp::PAYLOAD> xpayload);
+SEXP callback(Symbol name, bindrcpp::GETTER_FUNC xfun, bindrcpp::PAYLOAD xpayload);
 RcppExport SEXP bindrcpp_callback(SEXP nameSEXP, SEXP xfunSEXP, SEXP xpayloadSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< Symbol >::type name(nameSEXP);
-    Rcpp::traits::input_parameter< XPtr<bindrcpp::GETTER_FUNC> >::type xfun(xfunSEXP);
-    Rcpp::traits::input_parameter< XPtr<bindrcpp::PAYLOAD> >::type xpayload(xpayloadSEXP);
+    Rcpp::traits::input_parameter< bindrcpp::GETTER_FUNC >::type xfun(xfunSEXP);
+    Rcpp::traits::input_parameter< bindrcpp::PAYLOAD >::type xpayload(xpayloadSEXP);
     rcpp_result_gen = Rcpp::wrap(callback(name, xfun, xpayload));
     return rcpp_result_gen;
 END_RCPP

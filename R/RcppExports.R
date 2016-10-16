@@ -14,8 +14,8 @@ init_logging <- function(log_level) {
     invisible(.Call('bindrcpp_init_logging', PACKAGE = 'bindrcpp', log_level))
 }
 
-callback <- function(name, xfun, xpayload) {
-    .Call('bindrcpp_callback', PACKAGE = 'bindrcpp', name, xfun, xpayload)
+callback <- function(name, fun, payload) {
+    .Call('bindrcpp_callback', PACKAGE = 'bindrcpp', name, fun, payload)
 }
 
 do_test_create_environment <- function(names, xform, parent) {
