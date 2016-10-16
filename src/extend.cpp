@@ -19,8 +19,7 @@ namespace Rcpp {
   template <> PAYLOAD as(SEXP x) {
     LOG_VERBOSE << type2name(x);
     XPtr<PAYLOAD> xpayload(x);
-    LOG_VERBOSE;
-    return xpayload.get();
+    return *xpayload.get();
   }
   template <> GETTER_FUNC as(SEXP x) {
     LOG_VERBOSE << type2name(x);
