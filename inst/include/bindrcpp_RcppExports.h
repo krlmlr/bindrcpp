@@ -25,11 +25,11 @@ namespace bindrcpp {
         }
     }
 
-    inline SEXP create_env(CharacterVector names, XPtr<GETTER_FUNC> fun, XPtr<PAYLOAD> payload, Environment enclos) {
+    inline Environment create_env(CharacterVector names, bindrcpp::GETTER_FUNC fun, bindrcpp::PAYLOAD payload, Environment enclos) {
         typedef SEXP(*Ptr_create_env)(SEXP,SEXP,SEXP,SEXP);
         static Ptr_create_env p_create_env = NULL;
         if (p_create_env == NULL) {
-            validateSignature("SEXP(*create_env)(CharacterVector,XPtr<GETTER_FUNC>,XPtr<PAYLOAD>,Environment)");
+            validateSignature("Environment(*create_env)(CharacterVector,bindrcpp::GETTER_FUNC,bindrcpp::PAYLOAD,Environment)");
             p_create_env = (Ptr_create_env)R_GetCCallable("bindrcpp", "bindrcpp_create_env");
         }
         RObject rcpp_result_gen;
@@ -41,14 +41,14 @@ namespace bindrcpp {
             throw Rcpp::internal::InterruptedException();
         if (rcpp_result_gen.inherits("try-error"))
             throw Rcpp::exception(as<std::string>(rcpp_result_gen).c_str());
-        return Rcpp::as<SEXP >(rcpp_result_gen);
+        return Rcpp::as<Environment >(rcpp_result_gen);
     }
 
-    inline SEXP populate_env(Environment env, CharacterVector names, XPtr<GETTER_FUNC> fun, XPtr<PAYLOAD> payload) {
+    inline Environment populate_env(Environment env, CharacterVector names, bindrcpp::GETTER_FUNC fun, bindrcpp::PAYLOAD payload) {
         typedef SEXP(*Ptr_populate_env)(SEXP,SEXP,SEXP,SEXP);
         static Ptr_populate_env p_populate_env = NULL;
         if (p_populate_env == NULL) {
-            validateSignature("SEXP(*populate_env)(Environment,CharacterVector,XPtr<GETTER_FUNC>,XPtr<PAYLOAD>)");
+            validateSignature("Environment(*populate_env)(Environment,CharacterVector,bindrcpp::GETTER_FUNC,bindrcpp::PAYLOAD)");
             p_populate_env = (Ptr_populate_env)R_GetCCallable("bindrcpp", "bindrcpp_populate_env");
         }
         RObject rcpp_result_gen;
@@ -60,7 +60,7 @@ namespace bindrcpp {
             throw Rcpp::internal::InterruptedException();
         if (rcpp_result_gen.inherits("try-error"))
             throw Rcpp::exception(as<std::string>(rcpp_result_gen).c_str());
-        return Rcpp::as<SEXP >(rcpp_result_gen);
+        return Rcpp::as<Environment >(rcpp_result_gen);
     }
 
 }
