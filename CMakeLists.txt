@@ -12,6 +12,8 @@ include_directories(${R_INCLUDE})
 include_directories(inst/include)
 include_directories(src)
 
+add_definitions(-D__CLION__)
+
 file(GLOB SOURCE_FILES src/*.cpp src/*.c)
 add_library(bindrcpp ${SOURCE_FILES})
 

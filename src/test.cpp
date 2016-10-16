@@ -12,13 +12,22 @@ using namespace Rcpp;
 using namespace bindrcpp;
 
 // [[Rcpp::export(rng = FALSE)]]
-SEXP callback(Symbol name, bindrcpp::GETTER_FUNC fun, bindrcpp::PAYLOAD payload) {
+SEXP callback_string(Symbol name, bindrcpp::GETTER_FUNC_STRING fun, bindrcpp::PAYLOAD payload) {
+  LOG_VERBOSE << type2name(name);
   LOG_VERBOSE << payload.p;
 
   String name_string = name.c_str();
   name_string.set_encoding(CE_NATIVE);
 
   return fun(name_string, payload);
+}
+
+// [[Rcpp::export(rng = FALSE)]]
+SEXP callback_symbol(Symbol name, bindrcpp::GETTER_FUNC_SYMBOL fun, bindrcpp::PAYLOAD payload) {
+  LOG_VERBOSE << type2name(name);
+  LOG_VERBOSE << payload.p;
+
+  return fun(name, payload);
 }
 
 class CallbackTester {
@@ -72,11 +81,11 @@ SEXP do_test_create_environment(CharacterVector names, String xform, Environment
   CallbackTester& c = *pc;
 
   if (xform == "tolower") {
-    return bindrcpp::create_env(
+    return bindrcpp::create_env_string(
       names, &CallbackTester::tolower_static, PAYLOAD(&c), parent);
   }
   else if (xform == "toupper") {
-    return bindrcpp::create_env(
+    return bindrcpp::create_env_string(
       names, &CallbackTester::toupper_static, PAYLOAD(&c), parent);
   }
   else

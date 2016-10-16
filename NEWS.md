@@ -1,3 +1,8 @@
+## bindrcpp 0.0-6 (2016-10-16)
+
+- Provide callbacks for both `String` and `Symbol`.
+
+
 ## bindrcpp 0.0-5 (2016-10-16)
 
 - Reexport functions from `bindr`.
