@@ -12,18 +12,27 @@ namespace Rcpp {
     LOG_VERBOSE;
     return XPtr<PAYLOAD>(new PAYLOAD(payload));
   }
-  template <> SEXP wrap(const GETTER_FUNC& fun) {
+  template <> SEXP wrap(const GETTER_FUNC_STRING& fun) {
     LOG_VERBOSE;
-    return XPtr<GETTER_FUNC>(new GETTER_FUNC(fun));
+    return XPtr<GETTER_FUNC_STRING>(new GETTER_FUNC_STRING(fun));
+  }
+  template <> SEXP wrap(const GETTER_FUNC_SYMBOL& fun) {
+    LOG_VERBOSE;
+    return XPtr<GETTER_FUNC_SYMBOL>(new GETTER_FUNC_SYMBOL(fun));
   }
   template <> PAYLOAD as(SEXP x) {
     LOG_VERBOSE << type2name(x);
     XPtr<PAYLOAD> xpayload(x);
     return *xpayload.get();
   }
-  template <> GETTER_FUNC as(SEXP x) {
+  template <> GETTER_FUNC_STRING as(SEXP x) {
     LOG_VERBOSE << type2name(x);
-    XPtr<GETTER_FUNC> xfun(x);
+    XPtr<GETTER_FUNC_STRING> xfun(x);
+    return *xfun.get();
+  }
+  template <> GETTER_FUNC_SYMBOL as(SEXP x) {
+    LOG_VERBOSE << type2name(x);
+    XPtr<GETTER_FUNC_SYMBOL> xfun(x);
     return *xfun.get();
   }
 

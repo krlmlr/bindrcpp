@@ -3,24 +3,23 @@
 
 #include <RcppCommon.h>
 
-namespace Rcpp {
-  class String;
-}
+#include <Rcpp.h>
 
 namespace bindrcpp {
 
 struct PAYLOAD { void* p; explicit PAYLOAD(void* p_) : p(p_) {}; };
-typedef SEXP (*GETTER_FUNC)(const Rcpp::String& name, bindrcpp::PAYLOAD payload);
+typedef SEXP (*GETTER_FUNC_STRING)(const Rcpp::String& name, bindrcpp::PAYLOAD payload);
+typedef SEXP (*GETTER_FUNC_SYMBOL)(const Rcpp::Symbol& name, bindrcpp::PAYLOAD payload);
 
 }
 
 namespace Rcpp {
-  template <> SEXP wrap(const bindrcpp::PAYLOAD& payload);
-  template <> SEXP wrap(const bindrcpp::GETTER_FUNC&);
+  template <> SEXP wrap(const bindrcpp::PAYLOAD&);
+  template <> SEXP wrap(const bindrcpp::GETTER_FUNC_STRING&);
+  template <> SEXP wrap(const bindrcpp::GETTER_FUNC_SYMBOL&);
   template <> bindrcpp::PAYLOAD as(SEXP);
-  template <> bindrcpp::GETTER_FUNC as(SEXP);
+  template <> bindrcpp::GETTER_FUNC_STRING as(SEXP);
+  template <> bindrcpp::GETTER_FUNC_SYMBOL as(SEXP);
 }
-
-#include <Rcpp.h>
 
 #endif

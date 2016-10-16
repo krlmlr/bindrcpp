@@ -43,7 +43,7 @@ SEXP test_tolower_bindings(CharacterVector names, Environment parent) {
   PAYLOAD* payload = new PAYLOAD();
   
   return bindrcpp::create_environment(
-    names, XPtr<GETTER_FUNC>(new GETTER_FUNC(&tolower_callback)),
+    names, XPtr<GETTER_FUNC_STRING>(new GETTER_FUNC_STRING(&tolower_callback)),
     XPtr<PAYLOAD>(payload), parent);
 }
 ```
