@@ -21,7 +21,7 @@ Environment create_env_imp(CharacterVector names, bindrcpp::GETTER_FUNC fun, bin
 }
 
 // [[Rcpp::interfaces(cpp)]]
-// [[Rcpp::export(create_env)]]
+// [[Rcpp::export(populate_env)]]
 Environment populate_env_imp(Environment env, CharacterVector names, bindrcpp::GETTER_FUNC fun, bindrcpp::PAYLOAD payload) {
   using namespace bindrcpp;
 

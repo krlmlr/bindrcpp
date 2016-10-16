@@ -86,14 +86,14 @@ BEGIN_RCPP
 END_RCPP
 }
 // callback
-SEXP callback(Symbol name, bindrcpp::GETTER_FUNC xfun, bindrcpp::PAYLOAD xpayload);
-RcppExport SEXP bindrcpp_callback(SEXP nameSEXP, SEXP xfunSEXP, SEXP xpayloadSEXP) {
+SEXP callback(Symbol name, bindrcpp::GETTER_FUNC fun, bindrcpp::PAYLOAD payload);
+RcppExport SEXP bindrcpp_callback(SEXP nameSEXP, SEXP funSEXP, SEXP payloadSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< Symbol >::type name(nameSEXP);
-    Rcpp::traits::input_parameter< bindrcpp::GETTER_FUNC >::type xfun(xfunSEXP);
-    Rcpp::traits::input_parameter< bindrcpp::PAYLOAD >::type xpayload(xpayloadSEXP);
-    rcpp_result_gen = Rcpp::wrap(callback(name, xfun, xpayload));
+    Rcpp::traits::input_parameter< bindrcpp::GETTER_FUNC >::type fun(funSEXP);
+    Rcpp::traits::input_parameter< bindrcpp::PAYLOAD >::type payload(payloadSEXP);
+    rcpp_result_gen = Rcpp::wrap(callback(name, fun, payload));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -116,7 +116,7 @@ static int bindrcpp_RcppExport_validate(const char* sig) {
     static std::set<std::string> signatures;
     if (signatures.empty()) {
         signatures.insert("Environment(*create_env)(CharacterVector,bindrcpp::GETTER_FUNC,bindrcpp::PAYLOAD,Environment)");
-        signatures.insert("Environment(*create_env)(Environment,CharacterVector,bindrcpp::GETTER_FUNC,bindrcpp::PAYLOAD)");
+        signatures.insert("Environment(*populate_env)(Environment,CharacterVector,bindrcpp::GETTER_FUNC,bindrcpp::PAYLOAD)");
     }
     return signatures.find(sig) != signatures.end();
 }
@@ -124,7 +124,7 @@ static int bindrcpp_RcppExport_validate(const char* sig) {
 // registerCCallable (register entry points for exported C++ functions)
 RcppExport SEXP bindrcpp_RcppExport_registerCCallable() { 
     R_RegisterCCallable("bindrcpp", "bindrcpp_create_env", (DL_FUNC)bindrcpp_create_env_imp_try);
-    R_RegisterCCallable("bindrcpp", "bindrcpp_create_env", (DL_FUNC)bindrcpp_populate_env_imp_try);
+    R_RegisterCCallable("bindrcpp", "bindrcpp_populate_env", (DL_FUNC)bindrcpp_populate_env_imp_try);
     R_RegisterCCallable("bindrcpp", "bindrcpp_RcppExport_validate", (DL_FUNC)bindrcpp_RcppExport_validate);
     return R_NilValue;
 }
