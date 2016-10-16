@@ -1,3 +1,10 @@
+## bindrcpp 0.0-5 (2016-10-16)
+
+- Reexport functions from `bindr`.
+- Place C++ types in namespace.
+- Simplify interfaces, provide `as()` and `wrap()` for types.
+
+
 ## bindrcpp 0.0-4 (2016-10-16)
 
 - Rename to `bindrcpp`.
