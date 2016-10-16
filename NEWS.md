@@ -1,3 +1,10 @@
+## bindrcpp 0.0-7 (2016-10-16)
+
+- Conversion functions `as()` and `wrap()` are available in the included files.
+- Use AppVeyor.
+- Update README.
+
+
 ## bindrcpp 0.0-6 (2016-10-16)
 
 - Provide callbacks for both `String` and `Symbol`.
