@@ -32,15 +32,15 @@ public:
   CallbackTester() : magic(MAGIC) { LOG_VERBOSE; }
   ~CallbackTester() { LOG_VERBOSE; }
 
-  static SEXP tolower_static(Rcpp::String name, PAYLOAD payload) {
+  static SEXP tolower_static(const Rcpp::String& name, PAYLOAD payload) {
     LOG_VERBOSE << payload;
-    CallbackTester* this_ = reinterpret_cast<CallbackTester*>(payload);
+    CallbackTester* this_ = reinterpret_cast<CallbackTester*>(payload.p);
     return this_->tolower(name);
   }
 
-  static SEXP toupper_static(Rcpp::String name, PAYLOAD payload) {
+  static SEXP toupper_static(const Rcpp::String& name, PAYLOAD payload) {
     LOG_VERBOSE << payload;
-    CallbackTester* this_ = reinterpret_cast<CallbackTester*>(payload);
+    CallbackTester* this_ = reinterpret_cast<CallbackTester*>(payload.p);
     return this_->toupper(name);
   }
 
@@ -75,20 +75,12 @@ SEXP do_test_create_environment(CharacterVector names, String xform, Environment
   CallbackTester& c = *pc;
 
   if (xform == "tolower") {
-    PAYLOAD* ppayload = new PAYLOAD(&c);
-    LOG_VERBOSE << ppayload;
-
     return bindrcpp::create_env(
-      names, XPtr<GETTER_FUNC>(new GETTER_FUNC(&CallbackTester::tolower_static)),
-      XPtr<PAYLOAD>(ppayload), parent);
+      names, &CallbackTester::tolower_static, PAYLOAD(&c), parent);
   }
   else if (xform == "toupper") {
-    PAYLOAD* ppayload = new PAYLOAD(&c);
-    LOG_VERBOSE << ppayload;
-
     return bindrcpp::create_env(
-      names, XPtr<GETTER_FUNC>(new GETTER_FUNC(&CallbackTester::toupper_static)),
-      XPtr<PAYLOAD>(ppayload), parent);
+      names, &CallbackTester::toupper_static, PAYLOAD(&c), parent);
   }
   else
     stop("unknown xform");

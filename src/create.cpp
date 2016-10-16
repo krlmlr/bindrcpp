@@ -12,15 +12,19 @@ Function R_populate_env("populate_env", pkg_env);
 Function R_callback("callback", pkg_env);
 
 // [[Rcpp::interfaces(cpp)]]
-// [[Rcpp::export]]
-SEXP create_env(CharacterVector names, XPtr<bindrcpp::GETTER_FUNC> fun, XPtr<bindrcpp::PAYLOAD> payload, Environment enclos) {
-  LOG_VERBOSE << payload.get();
-  return R_create_env(names, R_callback, fun, payload, _[".enclos"] = enclos);
+// [[Rcpp::export(create_env)]]
+Environment create_env_imp(CharacterVector names, bindrcpp::GETTER_FUNC fun, bindrcpp::PAYLOAD payload, Environment enclos) {
+  using namespace bindrcpp;
+
+  LOG_VERBOSE << payload;
+  return R_create_env(names, R_callback, wrap(fun), wrap(payload), _[".enclos"] = enclos);
 }
 
 // [[Rcpp::interfaces(cpp)]]
-// [[Rcpp::export]]
-SEXP populate_env(Environment env, CharacterVector names, XPtr<bindrcpp::GETTER_FUNC> fun, XPtr<bindrcpp::PAYLOAD> payload) {
-  LOG_VERBOSE << payload.get();
-  return R_populate_env(env, names, R_callback, fun, payload);
+// [[Rcpp::export(create_env)]]
+Environment populate_env_imp(Environment env, CharacterVector names, bindrcpp::GETTER_FUNC fun, bindrcpp::PAYLOAD payload) {
+  using namespace bindrcpp;
+
+  LOG_VERBOSE << payload;
+  return R_populate_env(env, names, R_callback, wrap(fun), wrap(payload));
 }

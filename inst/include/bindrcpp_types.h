@@ -1,13 +1,26 @@
 #ifndef _bindrcpp_bindrcpp_types_H_
 #define _bindrcpp_bindrcpp_types_H_
 
-#include <Rcpp.h>
+#include <RcppCommon.h>
+
+namespace Rcpp {
+  class String;
+}
 
 namespace bindrcpp {
 
-typedef void* PAYLOAD;
-typedef SEXP (*GETTER_FUNC)(Rcpp::String name, bindrcpp::PAYLOAD payload);
+struct PAYLOAD { void* p; PAYLOAD(void* p_) : p(p_) {}; operator void*() const { return p; } };
+typedef SEXP (*GETTER_FUNC)(const Rcpp::String& name, bindrcpp::PAYLOAD payload);
 
 }
+
+namespace Rcpp {
+  template <> SEXP wrap(const bindrcpp::PAYLOAD& payload);
+  template <> SEXP wrap(const bindrcpp::GETTER_FUNC&);
+  template <> bindrcpp::PAYLOAD as(SEXP);
+  template <> bindrcpp::GETTER_FUNC as(SEXP);
+}
+
+#include <Rcpp.h>
 
 #endif
