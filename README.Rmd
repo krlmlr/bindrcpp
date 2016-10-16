@@ -12,7 +12,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# bindrcpp [![Travis-CI Build Status](https://travis-ci.org/krlmlr/bindrcpp.svg?branch=master)](https://travis-ci.org/krlmlr/bindrcpp)
+# bindrcpp [![Travis-CI Build Status](https://travis-ci.org/krlmlr/bindrcpp.svg?branch=master)](https://travis-ci.org/krlmlr/bindrcpp) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/krlmlr/bindrcpp?branch=master&svg=true)](https://ci.appveyor.com/project/krlmlr/bindrcpp)
 
 
 It's easy to create active bindings in R via
@@ -47,7 +47,9 @@ that creates active bindings that return the binding name in lowercase.
 
 using namespace Rcpp;
 
-SEXP tolower_callback(String name, PAYLOAD) {
+using namespace bindrcpp;
+
+SEXP tolower_callback(const String& name, PAYLOAD) {
   std::string name_string = name;
   std::transform(name_string.begin(), name_string.end(), name_string.begin(), ::tolower);
   return CharacterVector(name_string);
@@ -55,12 +57,9 @@ SEXP tolower_callback(String name, PAYLOAD) {
 
 // [[Rcpp::export]]
 SEXP test_tolower_bindings(CharacterVector names, Environment parent) {
-  // A void* can be passed here, but we don't use this functionality here
-  PAYLOAD* payload = new PAYLOAD();
-  
-  return bindrcpp::create_env(
-    names, XPtr<GETTER_FUNC_STRING>(new GETTER_FUNC_STRING(&tolower_callback)),
-    XPtr<PAYLOAD>(payload), parent);
+  // We don't pass any payload here
+  return bindrcpp::create_env_string(
+    names, &tolower_callback, PAYLOAD(NULL), parent);
 }
 ```
 

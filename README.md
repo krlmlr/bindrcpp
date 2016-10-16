@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-bindrcpp [![Travis-CI Build Status](https://travis-ci.org/krlmlr/bindrcpp.svg?branch=master)](https://travis-ci.org/krlmlr/bindrcpp)
-===============================================================================================================================================================
+bindrcpp [![Travis-CI Build Status](https://travis-ci.org/krlmlr/bindrcpp.svg?branch=master)](https://travis-ci.org/krlmlr/bindrcpp) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/krlmlr/bindrcpp?branch=master&svg=true)](https://ci.appveyor.com/project/krlmlr/bindrcpp)
+===========================================================================================================================================================================================================================================================================================================
 
 It's easy to create active bindings in R via [`makeActiveBinding()`](https://www.rdocumentation.org/packages/base/versions/3.3.1/topics/bindenv). This package faciliates the creation of active bindings that link back to C++ code. It provides an interface that allows binding several identifiers in an environment to the same C++ function, which is then called with the name (and a payload) as argument.
 
@@ -31,7 +31,9 @@ The following C++ module exports a function `test_tolower_bindings()` that creat
 
 using namespace Rcpp;
 
-SEXP tolower_callback(String name, PAYLOAD) {
+using namespace bindrcpp;
+
+SEXP tolower_callback(const String& name, PAYLOAD) {
   std::string name_string = name;
   std::transform(name_string.begin(), name_string.end(), name_string.begin(), ::tolower);
   return CharacterVector(name_string);
@@ -39,12 +41,9 @@ SEXP tolower_callback(String name, PAYLOAD) {
 
 // [[Rcpp::export]]
 SEXP test_tolower_bindings(CharacterVector names, Environment parent) {
-  // A void* can be passed here, but we don't use this functionality here
-  PAYLOAD* payload = new PAYLOAD();
-  
-  return bindrcpp::create_environment(
-    names, XPtr<GETTER_FUNC_STRING>(new GETTER_FUNC_STRING(&tolower_callback)),
-    XPtr<PAYLOAD>(payload), parent);
+  // We don't pass any payload here
+  return bindrcpp::create_env_string(
+    names, &tolower_callback, PAYLOAD(NULL), parent);
 }
 ```
 
