@@ -12,7 +12,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-# bindrcpp [![Travis-CI Build Status](https://travis-ci.org/krlmlr/bindrcpp.svg?branch=master)](https://travis-ci.org/krlmlr/bindrcpp)
+# bindrcpp [![Travis-CI Build Status](https://travis-ci.org/krlmlr/bindrcpp.svg?branch=master)](https://travis-ci.org/krlmlr/bindrcpp) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/krlmlr/bindrcpp?branch=master&svg=true)](https://ci.appveyor.com/project/krlmlr/bindrcpp)
 
 
 It's easy to create active bindings in R via
