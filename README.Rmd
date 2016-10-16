@@ -36,7 +36,7 @@ devtools::install_github("krlmlr/bindrcpp")
 The following C++ module exports a function `test_tolower_bindings()`
 that creates active bindings that return the binding name in lowercase.
 
-```{Rcpp}
+```{Rcpp module, cache = TRUE}
 #include <Rcpp.h>
 
 // [[Rcpp::depends(bindrcpp)]]

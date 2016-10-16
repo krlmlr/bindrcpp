@@ -10,3 +10,5 @@
 ^README-.*\.png$
 ^\.travis\.yml$
 ^appveyor\.yml$
+^codecov\.yml$
+^README_cache$
