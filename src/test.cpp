@@ -71,23 +71,25 @@ private:
 };
 
 // [[Rcpp::export]]
-SEXP do_test_create_environment(CharacterVector names, String xform, Environment parent) {
+List do_test_create_environment(CharacterVector names, String xform, Environment parent) {
   CallbackTester* pc = new CallbackTester;
 
   // HACK: Insert into parent environment to avoid early destruction or memory leaks.
   // A real application would probably store this object elsewhere
-  parent["__CALLBACK_STORAGE__"] = XPtr<CallbackTester>(pc);
+  List ret = List::create(_["callback"] = XPtr<CallbackTester>(pc));
 
   CallbackTester& c = *pc;
 
   if (xform == "tolower") {
-    return bindrcpp::create_env_string(
+    ret["env"] = bindrcpp::create_env_string(
       names, &CallbackTester::tolower_static, PAYLOAD(&c), parent);
   }
   else if (xform == "toupper") {
-    return bindrcpp::create_env_string(
+    ret["env"] = bindrcpp::create_env_string(
       names, &CallbackTester::toupper_static, PAYLOAD(&c), parent);
   }
   else
     stop("unknown xform");
+
+  return ret;
 }
