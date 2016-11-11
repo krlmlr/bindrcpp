@@ -4,12 +4,24 @@
 \name{bindrcpp-package}
 \alias{bindrcpp}
 \alias{bindrcpp-package}
-\title{An 'Rcpp' interface to active bindings}
+\title{bindrcpp: An 'Rcpp' interface to active bindings}
 \description{
 Provides an easy way to fill an environment with active bindings
 that call a C++ function.
 }
 \details{
 TBD
+}
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/krlmlr/bindrcpp}
+  \item Report bugs at \url{https://github.com/krlmlr/bindrcpp/issues}
+}
+
+}
+\author{
+\strong{Maintainer}: Kirill Müller \email{krlmlr+r@mailbox.org}
+
 }
 
