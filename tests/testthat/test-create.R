@@ -1,7 +1,8 @@
 context("create")
 
 test_that("cpp_create_environment()", {
-  env <- cpp_create_environment(letters, "toupper")
+  env_cb <- cpp_create_environment(letters, "toupper")
+  env <- env_cb$env
   expect_equal(env$a, "A")
   expect_equal(env$x, "X")
   expect_null(env$X)
@@ -10,8 +11,10 @@ test_that("cpp_create_environment()", {
 })
 
 test_that("cpp_create_environment() with inheritance", {
-  env <- cpp_create_environment(letters, "toupper")
-  env2 <- cpp_create_environment(LETTERS, "tolower", parent = env)
+  env_cb <- cpp_create_environment(letters, "toupper")
+  env <- env_cb$env
+  env2_cb <- cpp_create_environment(LETTERS, "tolower", parent = env)
+  env2 <- env2_cb$env
   expect_equal(get("a", env2), "A")
   expect_equal(get("x", env2), "X")
   expect_null(env2$a)

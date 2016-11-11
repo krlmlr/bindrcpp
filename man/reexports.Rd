@@ -2,9 +2,10 @@
 % Please edit documentation in R/bindr.R
 \docType{import}
 \name{reexports}
-\alias{create_env}
-\alias{populate_env}
 \alias{reexports}
+\alias{create_env}
+\alias{reexports}
+\alias{populate_env}
 \title{Objects exported from other packages}
 \keyword{internal}
 \description{
