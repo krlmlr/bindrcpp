@@ -14,4 +14,3 @@ RoxygenNote: 5.0.1.9000
 LazyData: true
 License: MIT + file LICENSE
 Encoding: UTF-8
-Remotes: krlmlr/bindr
