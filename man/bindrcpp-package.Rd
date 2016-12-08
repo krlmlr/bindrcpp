@@ -4,7 +4,7 @@
 \name{bindrcpp-package}
 \alias{bindrcpp}
 \alias{bindrcpp-package}
-\title{bindrcpp: An 'Rcpp' interface to active bindings}
+\title{bindrcpp: An 'Rcpp' Interface to Active Bindings}
 \description{
 Provides an easy way to fill an environment with active bindings
 that call a C++ function.
@@ -23,6 +23,11 @@ Useful links:
 }
 \author{
 \strong{Maintainer}: Kirill Müller \email{krlmlr+r@mailbox.org}
+
+Other contributors:
+\itemize{
+  \item RStudio [copyright holder]
+}
 
 }
 
