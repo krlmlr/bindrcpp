@@ -17,24 +17,27 @@ namespace Rcpp {
   using namespace bindrcpp;
 
   template <> inline SEXP wrap(const PAYLOAD& payload) {
-    return XPtr<PAYLOAD>(new PAYLOAD(payload));
+    return List::create(XPtr<PAYLOAD>(new PAYLOAD(payload)));
   }
   template <> inline SEXP wrap(const GETTER_FUNC_STRING& fun) {
-    return XPtr<GETTER_FUNC_STRING>(new GETTER_FUNC_STRING(fun));
+    return List::create(XPtr<GETTER_FUNC_STRING>(new GETTER_FUNC_STRING(fun)));
   }
   template <> inline SEXP wrap(const GETTER_FUNC_SYMBOL& fun) {
-    return XPtr<GETTER_FUNC_SYMBOL>(new GETTER_FUNC_SYMBOL(fun));
+    return List::create(XPtr<GETTER_FUNC_SYMBOL>(new GETTER_FUNC_SYMBOL(fun)));
   }
   template <> inline PAYLOAD as(SEXP x) {
-    XPtr<PAYLOAD> xpayload(x);
+    List xl = x;
+    XPtr<PAYLOAD> xpayload(static_cast<SEXP>(xl[0]));
     return *xpayload.get();
   }
   template <> inline GETTER_FUNC_STRING as(SEXP x) {
-    XPtr<GETTER_FUNC_STRING> xfun(x);
+    List xl = x;
+    XPtr<GETTER_FUNC_STRING> xfun(static_cast<SEXP>(xl[0]));
     return *xfun.get();
   }
   template <> inline GETTER_FUNC_SYMBOL as(SEXP x) {
-    XPtr<GETTER_FUNC_SYMBOL> xfun(x);
+    List xl = x;
+    XPtr<GETTER_FUNC_SYMBOL> xfun(static_cast<SEXP>(xl[0]));
     return *xfun.get();
   }
 }

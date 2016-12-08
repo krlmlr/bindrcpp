@@ -1,3 +1,10 @@
+## bindrcpp 0.0-8 (2016-12-08)
+
+- `XPtr` objects are always transported inside a length-one list (#1).
+- Use MIT license with RStudio as copyright holder.
+- Wrap `XPtr<>` instances in a list to avoid loss of payload (#1).
+
+
 ## bindrcpp 0.0-7 (2016-10-16)
 
 - Conversion functions `as()` and `wrap()` are available in the included files.

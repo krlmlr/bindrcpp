@@ -18,7 +18,7 @@ Environment create_env_string_imp(CharacterVector names, bindrcpp::GETTER_FUNC_S
   using namespace bindrcpp;
 
   LOG_VERBOSE << payload.p;
-  return R_create_env(names, R_callback_string, wrap(fun), wrap(payload), _[".enclos"] = enclos);
+  return R_create_env(names, R_callback_string, fun, payload, _[".enclos"] = enclos);
 }
 
 // [[Rcpp::interfaces(cpp)]]
@@ -27,7 +27,7 @@ Environment populate_env_string_imp(Environment env, CharacterVector names, bind
   using namespace bindrcpp;
 
   LOG_VERBOSE << payload.p;
-  return R_populate_env(env, names, R_callback_string, wrap(fun), wrap(payload));
+  return R_populate_env(env, names, R_callback_string, fun, payload);
 }
 
 // [[Rcpp::interfaces(cpp)]]
@@ -36,7 +36,7 @@ Environment create_env_symbol_imp(CharacterVector names, bindrcpp::GETTER_FUNC_S
   using namespace bindrcpp;
 
   LOG_VERBOSE << payload.p;
-  return R_create_env(names, R_callback_symbol, wrap(fun), wrap(payload), _[".enclos"] = enclos);
+  return R_create_env(names, R_callback_symbol, fun, payload, _[".enclos"] = enclos);
 }
 
 // [[Rcpp::interfaces(cpp)]]
@@ -45,5 +45,5 @@ Environment populate_env_symbol_imp(Environment env, CharacterVector names, bind
   using namespace bindrcpp;
 
   LOG_VERBOSE << payload.p;
-  return R_populate_env(env, names, R_callback_symbol, wrap(fun), wrap(payload));
+  return R_populate_env(env, names, R_callback_symbol, fun, payload);
 }

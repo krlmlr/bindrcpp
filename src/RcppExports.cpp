@@ -176,7 +176,7 @@ BEGIN_RCPP
 END_RCPP
 }
 // do_test_create_environment
-SEXP do_test_create_environment(CharacterVector names, String xform, Environment parent);
+List do_test_create_environment(CharacterVector names, String xform, Environment parent);
 RcppExport SEXP bindrcpp_do_test_create_environment(SEXP namesSEXP, SEXP xformSEXP, SEXP parentSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
