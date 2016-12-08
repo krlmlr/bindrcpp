@@ -21,7 +21,7 @@ this call contains the name of the binding (as character) and an arbitrary
 payload (\code{PAYLOAD}, essentially a wrapped \code{void*}).
 \item \code{create_env_symbol()} is similar, the callback function accepts the name of
 the binding as symbol instead of character (\code{GETTER_FUNC_SYMBOL}).
-\item \code{populate_env_string()} and \code{populate_env_symbol()} populates an existing
+\item \code{populate_env_string()} and \code{populate_env_symbol()} populate an existing
 environment instead of creating a new one.
 }
 }
