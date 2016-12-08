@@ -1,5 +1,5 @@
 Package: bindrcpp
-Title: An 'Rcpp' interface to active bindings
+Title: An 'Rcpp' Interface to Active Bindings
 Description: Provides an easy way to fill an environment with active bindings
     that call a C++ function.
 Authors@R: person("Kirill", "Müller", role = c("aut", "cre"), email = "krlmlr+r@mailbox.org")
