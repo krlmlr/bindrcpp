@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
-bindrcpp [![Travis-CI Build Status](https://travis-ci.org/krlmlr/bindrcpp.svg?branch=master)](https://travis-ci.org/krlmlr/bindrcpp) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/krlmlr/bindrcpp?branch=master&svg=true)](https://ci.appveyor.com/project/krlmlr/bindrcpp)
-===========================================================================================================================================================================================================================================================================================================
+bindrcpp [![Travis-CI Build Status](https://travis-ci.org/krlmlr/bindrcpp.svg?branch=master)](https://travis-ci.org/krlmlr/bindrcpp) [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/krlmlr/bindrcpp?branch=master&svg=true)](https://ci.appveyor.com/project/krlmlr/bindrcpp) [![CRAN\_Status\_Badge](http://www.r-pkg.org/badges/version/bindrcpp)](https://cran.r-project.org/package=bindrcpp)
+===============================================================================================================================================================================================================================================================================================================================================================================================================================
 
 It's easy to create active bindings in R via [`makeActiveBinding()`](https://www.rdocumentation.org/packages/base/versions/3.3.1/topics/bindenv). This package faciliates the creation of active bindings that link back to C++ code. It provides an interface that allows binding several identifiers in an environment to the same C++ function, which is then called with the name (and a payload) as argument.
 
