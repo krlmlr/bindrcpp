@@ -85,7 +85,23 @@ that call a C++ function.</p>
         
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>TBD</p>
+    <p>Use <code>LinkingTo: bindrcpp</code> in <code>DESCRIPTION</code> and
+<code>#include &lt;bindrcpp.h&gt;</code> in your C++ headers and/or modules to access the
+C++ functions provided by this package:
+<ul>
+<li> <code>create_env_string()</code> creates an environment with active bindings, with
+names given as a character vector.  Access of these bindings triggers a
+call to a C++ function with a fixed signature (<code>GETTER_FUNC_STRING</code>);
+this call contains the name of the binding (as character) and an arbitrary
+payload (<code>PAYLOAD</code>, essentially a wrapped <code>void*</code>).
+</li>
+<li> <code>create_env_symbol()</code> is similar, the callback function accepts the name of
+the binding as symbol instead of character (<code>GETTER_FUNC_SYMBOL</code>).
+</li>
+<li> <code>populate_env_string()</code> and <code>populate_env_symbol()</code> populate an existing
+environment instead of creating a new one.
+</li>
+</ul></p>
     
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 

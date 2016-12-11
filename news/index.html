@@ -79,57 +79,27 @@
     </div>
 
     <div class="contents">
-    <div id="bindrcpp-0-0-8-2016-12-08" class="section level2">
+    <div id="bindrcpp-0-1-2016-12-08" class="section level1">
+<h1 class="hasAnchor">
+<a href="#bindrcpp-0-1-2016-12-08" class="anchor"> </a>bindrcpp 0.1 (2016-12-08)</h1>
+<p>Initial CRAN release.</p>
+<div id="exported-c-functions" class="section level2">
 <h2 class="hasAnchor">
-<a href="#bindrcpp-0-0-8-2016-12-08" class="anchor"> </a>bindrcpp 0.0-8 (2016-12-08)</h2>
+<a href="#exported-c-functions" class="anchor"> </a>Exported C++ functions</h2>
 <ul><li>
-<code>XPtr</code> objects are always transported inside a length-one list (#1).</li>
-<li>Use MIT license with RStudio as copyright holder.</li>
-<li>Wrap <code>XPtr&lt;&gt;</code> instances in a list to avoid loss of payload (#1).</li>
+<code>create_env_string()</code> creates an environment with active bindings, with names given as a character vector. Access of these bindings triggers a call to a C++ function with a fixed signature (<code>GETTER_FUNC_STRING</code>); this call contains the name of the binding (as character) and an arbitrary payload (<code>PAYLOAD</code>, essentially a wrapped <code>void*</code>).</li>
+<li>
+<code>create_env_symbol()</code> is similar, the callback function accepts the name of the binding as symbol instead of character (<code>GETTER_FUNC_SYMBOL</code>).</li>
+<li>
+<code>populate_env_string()</code> and <code>populate_env_symbol()</code> populate an existing environment instead of creating a new one.</li>
+<li>Use <code>LinkingTo: bindrcpp</code> and <code>#include &lt;bindrcpp.h&gt;</code> to access these functions from your package.</li>
 </ul></div>
-    <div id="bindrcpp-0-0-7-2016-10-16" class="section level2">
+<div id="exported-r-functions" class="section level2">
 <h2 class="hasAnchor">
-<a href="#bindrcpp-0-0-7-2016-10-16" class="anchor"> </a>bindrcpp 0.0-7 (2016-10-16)</h2>
-<ul><li>Conversion functions <code>as()</code> and <code>wrap()</code> are available in the included files.</li>
-<li>Use AppVeyor.</li>
-<li>Update README.</li>
+<a href="#exported-r-functions" class="anchor"> </a>Exported R functions</h2>
+<ul><li>Reexported from <code>bindr</code>: <code><a href="../reference/reexports.html">create_env()</a></code> and <code><a href="../reference/reexports.html">populate_env()</a></code>.</li>
 </ul></div>
-    <div id="bindrcpp-0-0-6-2016-10-16" class="section level2">
-<h2 class="hasAnchor">
-<a href="#bindrcpp-0-0-6-2016-10-16" class="anchor"> </a>bindrcpp 0.0-6 (2016-10-16)</h2>
-<ul><li>Provide callbacks for both <code>String</code> and <code>Symbol</code>.</li>
-</ul></div>
-    <div id="bindrcpp-0-0-5-2016-10-16" class="section level2">
-<h2 class="hasAnchor">
-<a href="#bindrcpp-0-0-5-2016-10-16" class="anchor"> </a>bindrcpp 0.0-5 (2016-10-16)</h2>
-<ul><li>Reexport functions from <code>bindr</code>.</li>
-<li>Place C++ types in namespace.</li>
-<li>Simplify interfaces, provide <code>as()</code> and <code>wrap()</code> for types.</li>
-</ul></div>
-    <div id="bindrcpp-0-0-4-2016-10-16" class="section level2">
-<h2 class="hasAnchor">
-<a href="#bindrcpp-0-0-4-2016-10-16" class="anchor"> </a>bindrcpp 0.0-4 (2016-10-16)</h2>
-<ul><li>Rename to <code>bindrcpp</code>.</li>
-<li>New <code><a href="../reference/reexports.html">populate_env()</a></code>.</li>
-</ul></div>
-    <div id="bindrcpp-0-0-3-2016-10-16" class="section level2">
-<h2 class="hasAnchor">
-<a href="#bindrcpp-0-0-3-2016-10-16" class="anchor"> </a>bindrcpp 0.0-3 (2016-10-16)</h2>
-<ul><li>Use new <code>bindr</code> package.</li>
-<li>Function is called <code><a href="../reference/reexports.html">create_env()</a></code>.</li>
-</ul></div>
-    <div id="bindrcpp-0-0-2-2016-10-15" class="section level2">
-<h2 class="hasAnchor">
-<a href="#bindrcpp-0-0-2-2016-10-15" class="anchor"> </a>bindrcpp 0.0-2 (2016-10-15)</h2>
-<ul><li>Now also works when package is loaded by R and not <code>devtools</code>.</li>
-</ul></div>
-    <div id="bindrcpp-0-0-1-2016-10-15" class="section level2">
-<h2 class="hasAnchor">
-<a href="#bindrcpp-0-0-1-2016-10-15" class="anchor"> </a>bindrcpp 0.0-1 (2016-10-15)</h2>
-<ul><li>Initial release</li>
-<li>No R functions exported</li>
-<li>Exporting C++ function <code>create_environment()</code> that populates an environment with active bindings that link back to a C++ function (given as function pointer with payload).</li>
-</ul></div>
+</div>
     </div>
   </div>
 
@@ -137,14 +107,7 @@
     <div id="tocnav">
       <h2>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
-        <li><a href="#bindrcpp-0-0-8-2016-12-08">0.0-8</a></li>
-        <li><a href="#bindrcpp-0-0-7-2016-10-16">0.0-7</a></li>
-        <li><a href="#bindrcpp-0-0-6-2016-10-16">0.0-6</a></li>
-        <li><a href="#bindrcpp-0-0-5-2016-10-16">0.0-5</a></li>
-        <li><a href="#bindrcpp-0-0-4-2016-10-16">0.0-4</a></li>
-        <li><a href="#bindrcpp-0-0-3-2016-10-16">0.0-3</a></li>
-        <li><a href="#bindrcpp-0-0-2-2016-10-15">0.0-2</a></li>
-        <li><a href="#bindrcpp-0-0-1-2016-10-15">0.0-1</a></li>
+        <li><a href="#bindrcpp-0-1-2016-12-08">0.1</a></li>
       </ul>
     </div>
   </div>
