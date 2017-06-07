@@ -7,7 +7,7 @@
 
 namespace bindrcpp {
 
-struct PAYLOAD { void* p; explicit PAYLOAD(void* p_) : p(p_) {}; };
+struct PAYLOAD { void* p; explicit PAYLOAD(void* p_) : p(p_) { LOG_VERBOSE; }; ~PAYLOAD() { LOG_VERBOSE; } };
 typedef SEXP (*GETTER_FUNC_STRING)(const Rcpp::String& name, bindrcpp::PAYLOAD payload);
 typedef SEXP (*GETTER_FUNC_SYMBOL)(const Rcpp::Symbol& name, bindrcpp::PAYLOAD payload);
 
