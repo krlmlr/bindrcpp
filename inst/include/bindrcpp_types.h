@@ -27,18 +27,15 @@ namespace Rcpp {
   }
   template <> inline PAYLOAD as(SEXP x) {
     List xl = x;
-    XPtr<PAYLOAD> xpayload(static_cast<SEXP>(xl[0]));
-    return *xpayload.get();
+    return *(PAYLOAD*)R_ExternalPtrAddr(xl[0]);
   }
   template <> inline GETTER_FUNC_STRING as(SEXP x) {
     List xl = x;
-    XPtr<GETTER_FUNC_STRING> xfun(static_cast<SEXP>(xl[0]));
-    return *xfun.get();
+    return *(GETTER_FUNC_STRING*)R_ExternalPtrAddr(xl[0]);
   }
   template <> inline GETTER_FUNC_SYMBOL as(SEXP x) {
     List xl = x;
-    XPtr<GETTER_FUNC_SYMBOL> xfun(static_cast<SEXP>(xl[0]));
-    return *xfun.get();
+    return *(GETTER_FUNC_SYMBOL*)R_ExternalPtrAddr(xl[0]);
   }
 }
 
