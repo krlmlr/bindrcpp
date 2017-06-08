@@ -29,19 +29,19 @@ namespace Rcpp {
     return List::create(XPtr<GETTER_FUNC_SYMBOL>(new GETTER_FUNC_SYMBOL(fun)));
   }
   template <> inline PAYLOAD as(SEXP x) {
-    List xl = x;
     LOG_VERBOSE << "PAYLOAD as()\n";
-    return *(PAYLOAD*)R_ExternalPtrAddr(xl[0]);
+    SEXP x0 = VECTOR_ELT(x, 0);
+    return *(PAYLOAD*)R_ExternalPtrAddr(x0);
   }
   template <> inline GETTER_FUNC_STRING as(SEXP x) {
-    List xl = x;
     LOG_VERBOSE << "GETTER_FUNC_STRING as()\n";
-    return *(GETTER_FUNC_STRING*)R_ExternalPtrAddr(xl[0]);
+    SEXP x0 = VECTOR_ELT(x, 0);
+    return *(GETTER_FUNC_STRING*)R_ExternalPtrAddr(x0);
   }
   template <> inline GETTER_FUNC_SYMBOL as(SEXP x) {
-    List xl = x;
     LOG_VERBOSE << "GETTER_FUNC_SYMBOL as()\n";
-    return *(GETTER_FUNC_SYMBOL*)R_ExternalPtrAddr(xl[0]);
+    SEXP x0 = VECTOR_ELT(x, 0);
+    return *(GETTER_FUNC_SYMBOL*)R_ExternalPtrAddr(x0);
   }
 }
 
