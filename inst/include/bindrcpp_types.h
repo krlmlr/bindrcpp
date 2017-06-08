@@ -15,7 +15,7 @@ struct PAYLOAD {
     LOG_VERBOSE << this << "\n";
   }
   explicit PAYLOAD(void* p_) : p(p_) {
-    LOG_VERBOSE << "PAYLOAD(\", this, \")\n";
+    LOG_VERBOSE << "PAYLOAD(", this, ")\n";
   }
   ~PAYLOAD() {
     LOG_VERBOSE << "~PAYLOAD(", this, ")\n";
