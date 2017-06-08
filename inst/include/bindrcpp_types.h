@@ -12,13 +12,13 @@ namespace bindrcpp {
 struct PAYLOAD {
   void* p;
   PAYLOAD() {
-    LOG_VERBOSE;
+    LOG_VERBOSE << this << "\n";
   }
   explicit PAYLOAD(void* p_) : p(p_) {
-    LOG_VERBOSE << "PAYLOAD()\n";
+    LOG_VERBOSE << "PAYLOAD(\", this, \")\n";
   }
   ~PAYLOAD() {
-    LOG_VERBOSE << "~PAYLOAD()\n";
+    LOG_VERBOSE << "~PAYLOAD(", this, ")\n";
   }
 };
 typedef SEXP (*GETTER_FUNC_STRING)(const Rcpp::String& name, bindrcpp::PAYLOAD payload);
@@ -42,9 +42,10 @@ namespace Rcpp {
     return List::create(XPtr<GETTER_FUNC_SYMBOL>(new GETTER_FUNC_SYMBOL(fun)));
   }
   template <> inline PAYLOAD as(SEXP x) {
-    LOG_VERBOSE << "PAYLOAD as()\n";
     SEXP x0 = VECTOR_ELT(x, 0);
-    return *(PAYLOAD*)R_ExternalPtrAddr(x0);
+    PAYLOAD* p = (PAYLOAD*)R_ExternalPtrAddr(x0);
+    LOG_VERBOSE << "PAYLOAD as(" << p << ")\n";
+    return *p;
   }
   template <> inline GETTER_FUNC_STRING as(SEXP x) {
     LOG_VERBOSE << "GETTER_FUNC_STRING as()\n";
