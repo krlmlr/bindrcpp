@@ -15,10 +15,10 @@ struct PAYLOAD {
     LOG_VERBOSE << this << "\n";
   }
   explicit PAYLOAD(void* p_) : p(p_) {
-    LOG_VERBOSE << "PAYLOAD(", this, ")\n";
+    LOG_VERBOSE << "PAYLOAD(" << this << ", " << p << ")\n";
   }
   ~PAYLOAD() {
-    LOG_VERBOSE << "~PAYLOAD(", this, ")\n";
+    LOG_VERBOSE << "~PAYLOAD(" << this << ", " << p << ")\n";
   }
 };
 typedef SEXP (*GETTER_FUNC_STRING)(const Rcpp::String& name, bindrcpp::PAYLOAD payload);
@@ -44,7 +44,7 @@ namespace Rcpp {
   template <> inline PAYLOAD as(SEXP x) {
     SEXP x0 = VECTOR_ELT(x, 0);
     PAYLOAD* p = (PAYLOAD*)R_ExternalPtrAddr(x0);
-    LOG_VERBOSE << "PAYLOAD as(" << p << ")\n";
+    LOG_VERBOSE << "PAYLOAD as(" << p << ", " << p->p << ")\n";
     return *p;
   }
   template <> inline GETTER_FUNC_STRING as(SEXP x) {
