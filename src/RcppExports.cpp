@@ -152,26 +152,24 @@ BEGIN_RCPP
 END_RCPP
 }
 // callback_string
-SEXP callback_string(Symbol name, bindrcpp::GETTER_FUNC_STRING fun, bindrcpp::PAYLOAD payload);
-RcppExport SEXP bindrcpp_callback_string(SEXP nameSEXP, SEXP funSEXP, SEXP payloadSEXP) {
+SEXP callback_string(Symbol name, List fun_and_payload);
+RcppExport SEXP bindrcpp_callback_string(SEXP nameSEXP, SEXP fun_and_payloadSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< Symbol >::type name(nameSEXP);
-    Rcpp::traits::input_parameter< bindrcpp::GETTER_FUNC_STRING >::type fun(funSEXP);
-    Rcpp::traits::input_parameter< bindrcpp::PAYLOAD >::type payload(payloadSEXP);
-    rcpp_result_gen = Rcpp::wrap(callback_string(name, fun, payload));
+    Rcpp::traits::input_parameter< List >::type fun_and_payload(fun_and_payloadSEXP);
+    rcpp_result_gen = Rcpp::wrap(callback_string(name, fun_and_payload));
     return rcpp_result_gen;
 END_RCPP
 }
 // callback_symbol
-SEXP callback_symbol(Symbol name, bindrcpp::GETTER_FUNC_SYMBOL fun, bindrcpp::PAYLOAD payload);
-RcppExport SEXP bindrcpp_callback_symbol(SEXP nameSEXP, SEXP funSEXP, SEXP payloadSEXP) {
+SEXP callback_symbol(Symbol name, List fun_and_payload);
+RcppExport SEXP bindrcpp_callback_symbol(SEXP nameSEXP, SEXP fun_and_payloadSEXP) {
 BEGIN_RCPP
     Rcpp::RObject rcpp_result_gen;
     Rcpp::traits::input_parameter< Symbol >::type name(nameSEXP);
-    Rcpp::traits::input_parameter< bindrcpp::GETTER_FUNC_SYMBOL >::type fun(funSEXP);
-    Rcpp::traits::input_parameter< bindrcpp::PAYLOAD >::type payload(payloadSEXP);
-    rcpp_result_gen = Rcpp::wrap(callback_symbol(name, fun, payload));
+    Rcpp::traits::input_parameter< List >::type fun_and_payload(fun_and_payloadSEXP);
+    rcpp_result_gen = Rcpp::wrap(callback_symbol(name, fun_and_payload));
     return rcpp_result_gen;
 END_RCPP
 }
@@ -217,8 +215,8 @@ static const R_CallMethodDef CallEntries[] = {
     {"bindrcpp_create_env_symbol_imp", (DL_FUNC) &bindrcpp_create_env_symbol_imp, 4},
     {"bindrcpp_populate_env_symbol_imp", (DL_FUNC) &bindrcpp_populate_env_symbol_imp, 4},
     {"bindrcpp_init_logging", (DL_FUNC) &bindrcpp_init_logging, 1},
-    {"bindrcpp_callback_string", (DL_FUNC) &bindrcpp_callback_string, 3},
-    {"bindrcpp_callback_symbol", (DL_FUNC) &bindrcpp_callback_symbol, 3},
+    {"bindrcpp_callback_string", (DL_FUNC) &bindrcpp_callback_string, 2},
+    {"bindrcpp_callback_symbol", (DL_FUNC) &bindrcpp_callback_symbol, 2},
     {"bindrcpp_do_test_create_environment", (DL_FUNC) &bindrcpp_do_test_create_environment, 3},
     {"bindrcpp_RcppExport_registerCCallable", (DL_FUNC) &bindrcpp_RcppExport_registerCCallable, 0},
     {NULL, NULL, 0}

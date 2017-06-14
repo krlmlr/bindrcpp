@@ -12,7 +12,10 @@ using namespace Rcpp;
 using namespace bindrcpp;
 
 // [[Rcpp::export(rng = FALSE)]]
-SEXP callback_string(Symbol name, bindrcpp::GETTER_FUNC_STRING fun, bindrcpp::PAYLOAD payload) {
+SEXP callback_string(Symbol name, List fun_and_payload) {
+  bindrcpp::GETTER_FUNC_STRING fun = fun_and_payload[0];
+  bindrcpp::PAYLOAD payload = fun_and_payload[1];
+
   LOG_VERBOSE << type2name(name);
   LOG_VERBOSE << payload.p;
 
@@ -23,7 +26,10 @@ SEXP callback_string(Symbol name, bindrcpp::GETTER_FUNC_STRING fun, bindrcpp::PA
 }
 
 // [[Rcpp::export(rng = FALSE)]]
-SEXP callback_symbol(Symbol name, bindrcpp::GETTER_FUNC_SYMBOL fun, bindrcpp::PAYLOAD payload) {
+SEXP callback_symbol(Symbol name, List fun_and_payload) {
+  bindrcpp::GETTER_FUNC_SYMBOL fun = fun_and_payload[0];
+  bindrcpp::PAYLOAD payload = fun_and_payload[1];
+
   LOG_VERBOSE << type2name(name);
   LOG_VERBOSE << payload.p;
 
