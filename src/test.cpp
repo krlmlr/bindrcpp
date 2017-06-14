@@ -84,11 +84,11 @@ List do_test_create_environment(CharacterVector names, String xform, Environment
 
   if (xform == "tolower") {
     ret["env"] = bindrcpp::create_env_string(
-      names, &CallbackTester::tolower_static, PAYLOAD(pc), parent);
+      names, List::create(&CallbackTester::tolower_static, PAYLOAD(pc)), parent);
   }
   else if (xform == "toupper") {
     ret["env"] = bindrcpp::create_env_string(
-      names, &CallbackTester::toupper_static, PAYLOAD(pc), parent);
+      names, List::create(&CallbackTester::toupper_static, PAYLOAD(pc)), parent);
   }
   else
     stop("unknown xform");
