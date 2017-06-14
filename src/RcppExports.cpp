@@ -210,3 +210,21 @@ RcppExport SEXP bindrcpp_RcppExport_registerCCallable() {
     R_RegisterCCallable("bindrcpp", "bindrcpp_RcppExport_validate", (DL_FUNC)bindrcpp_RcppExport_validate);
     return R_NilValue;
 }
+
+static const R_CallMethodDef CallEntries[] = {
+    {"bindrcpp_create_env_string_imp", (DL_FUNC) &bindrcpp_create_env_string_imp, 4},
+    {"bindrcpp_populate_env_string_imp", (DL_FUNC) &bindrcpp_populate_env_string_imp, 4},
+    {"bindrcpp_create_env_symbol_imp", (DL_FUNC) &bindrcpp_create_env_symbol_imp, 4},
+    {"bindrcpp_populate_env_symbol_imp", (DL_FUNC) &bindrcpp_populate_env_symbol_imp, 4},
+    {"bindrcpp_init_logging", (DL_FUNC) &bindrcpp_init_logging, 1},
+    {"bindrcpp_callback_string", (DL_FUNC) &bindrcpp_callback_string, 3},
+    {"bindrcpp_callback_symbol", (DL_FUNC) &bindrcpp_callback_symbol, 3},
+    {"bindrcpp_do_test_create_environment", (DL_FUNC) &bindrcpp_do_test_create_environment, 3},
+    {"bindrcpp_RcppExport_registerCCallable", (DL_FUNC) &bindrcpp_RcppExport_registerCCallable, 0},
+    {NULL, NULL, 0}
+};
+
+RcppExport void R_init_bindrcpp(DllInfo *dll) {
+    R_registerRoutines(dll, NULL, CallEntries, NULL, NULL);
+    R_useDynamicSymbols(dll, FALSE);
+}
