@@ -13,7 +13,7 @@ BugReports: https://github.com/krlmlr/bindrcpp/issues
 Imports: Rcpp, bindr
 Suggests: testthat
 LinkingTo: Rcpp, plogr
-RoxygenNote: 5.0.1.9000
+RoxygenNote: 6.0.1
 LazyData: true
 License: MIT + file LICENSE
 Encoding: UTF-8
