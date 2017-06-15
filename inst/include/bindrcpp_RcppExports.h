@@ -35,7 +35,7 @@ namespace bindrcpp {
         RObject rcpp_result_gen;
         {
             RNGScope RCPP_rngScope_gen;
-            rcpp_result_gen = p_create_env_string(Rcpp::wrap(names), Rcpp::wrap(fun), Rcpp::wrap(payload), Rcpp::wrap(enclos));
+            rcpp_result_gen = p_create_env_string(Shield<SEXP>(Rcpp::wrap(names)), Shield<SEXP>(Rcpp::wrap(fun)), Shield<SEXP>(Rcpp::wrap(payload)), Shield<SEXP>(Rcpp::wrap(enclos)));
         }
         if (rcpp_result_gen.inherits("interrupted-error"))
             throw Rcpp::internal::InterruptedException();
@@ -54,7 +54,7 @@ namespace bindrcpp {
         RObject rcpp_result_gen;
         {
             RNGScope RCPP_rngScope_gen;
-            rcpp_result_gen = p_populate_env_string(Rcpp::wrap(env), Rcpp::wrap(names), Rcpp::wrap(fun), Rcpp::wrap(payload));
+            rcpp_result_gen = p_populate_env_string(Shield<SEXP>(Rcpp::wrap(env)), Shield<SEXP>(Rcpp::wrap(names)), Shield<SEXP>(Rcpp::wrap(fun)), Shield<SEXP>(Rcpp::wrap(payload)));
         }
         if (rcpp_result_gen.inherits("interrupted-error"))
             throw Rcpp::internal::InterruptedException();
@@ -73,7 +73,7 @@ namespace bindrcpp {
         RObject rcpp_result_gen;
         {
             RNGScope RCPP_rngScope_gen;
-            rcpp_result_gen = p_create_env_symbol(Rcpp::wrap(names), Rcpp::wrap(fun), Rcpp::wrap(payload), Rcpp::wrap(enclos));
+            rcpp_result_gen = p_create_env_symbol(Shield<SEXP>(Rcpp::wrap(names)), Shield<SEXP>(Rcpp::wrap(fun)), Shield<SEXP>(Rcpp::wrap(payload)), Shield<SEXP>(Rcpp::wrap(enclos)));
         }
         if (rcpp_result_gen.inherits("interrupted-error"))
             throw Rcpp::internal::InterruptedException();
@@ -92,7 +92,7 @@ namespace bindrcpp {
         RObject rcpp_result_gen;
         {
             RNGScope RCPP_rngScope_gen;
-            rcpp_result_gen = p_populate_env_symbol(Rcpp::wrap(env), Rcpp::wrap(names), Rcpp::wrap(fun), Rcpp::wrap(payload));
+            rcpp_result_gen = p_populate_env_symbol(Shield<SEXP>(Rcpp::wrap(env)), Shield<SEXP>(Rcpp::wrap(names)), Shield<SEXP>(Rcpp::wrap(fun)), Shield<SEXP>(Rcpp::wrap(payload)));
         }
         if (rcpp_result_gen.inherits("interrupted-error"))
             throw Rcpp::internal::InterruptedException();
