@@ -11,22 +11,22 @@
 #'
 #' @keywords internal
 init_logging <- function(log_level) {
-    invisible(.Call('bindrcpp_init_logging', PACKAGE = 'bindrcpp', log_level))
+    invisible(.Call('_bindrcpp_init_logging', PACKAGE = 'bindrcpp', log_level))
 }
 
 callback_string <- function(name, fun, payload) {
-    .Call('bindrcpp_callback_string', PACKAGE = 'bindrcpp', name, fun, payload)
+    .Call('_bindrcpp_callback_string', PACKAGE = 'bindrcpp', name, fun, payload)
 }
 
 callback_symbol <- function(name, fun, payload) {
-    .Call('bindrcpp_callback_symbol', PACKAGE = 'bindrcpp', name, fun, payload)
+    .Call('_bindrcpp_callback_symbol', PACKAGE = 'bindrcpp', name, fun, payload)
 }
 
 do_test_create_environment <- function(names, xform, parent) {
-    .Call('bindrcpp_do_test_create_environment', PACKAGE = 'bindrcpp', names, xform, parent)
+    .Call('_bindrcpp_do_test_create_environment', PACKAGE = 'bindrcpp', names, xform, parent)
 }
 
 # Register entry points for exported C++ functions
 methods::setLoadAction(function(ns) {
-    .Call('bindrcpp_RcppExport_registerCCallable', PACKAGE = 'bindrcpp')
+    .Call('_bindrcpp_RcppExport_registerCCallable', PACKAGE = 'bindrcpp')
 })
