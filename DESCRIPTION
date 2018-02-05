@@ -1,20 +1,27 @@
 Package: bindrcpp
 Title: An 'Rcpp' Interface to Active Bindings
-Description: Provides an easy way to fill an environment with active bindings
-    that call a C++ function.
+Version: 0.2.0.9000
+Date: 2018-02-05
 Authors@R: c(
     person("Kirill", "Müller", role = c("aut", "cre"), email = "krlmlr+r@mailbox.org"),
     person("RStudio", role = "cph")
     )
-Version: 0.2.0.9000
-Date: 2018-02-05
+Description: Provides an easy way to fill an environment with active bindings
+    that call a C++ function.
+License: MIT + file LICENSE
 URL: https://github.com/krlmlr/bindrcpp, https://krlmlr.github.io/bindrcpp
 BugReports: https://github.com/krlmlr/bindrcpp/issues
-Imports: Rcpp, bindr
-Suggests: testthat
-LinkingTo: Rcpp, plogr
-RoxygenNote: 6.0.1
-LazyData: true
-License: MIT + file LICENSE
+Imports: 
+    bindr (>= 0.1.0.9000),
+    Rcpp
+Suggests: 
+    testthat
+LinkingTo: 
+    plogr,
+    Rcpp
+Remotes: 
+    krlmlr/bindr
 Encoding: UTF-8
+LazyData: true
 Roxygen: list(markdown = TRUE)
+RoxygenNote: 6.0.1
