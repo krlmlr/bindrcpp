@@ -17,7 +17,7 @@ namespace bindrcpp {
             require("bindrcpp", Rcpp::Named("quietly") = true);
             typedef int(*Ptr_validate)(const char*);
             static Ptr_validate p_validate = (Ptr_validate)
-                R_GetCCallable("bindrcpp", "bindrcpp_RcppExport_validate");
+                R_GetCCallable("bindrcpp", "_bindrcpp_RcppExport_validate");
             if (!p_validate(sig)) {
                 throw Rcpp::function_not_exported(
                     "C++ function with signature '" + std::string(sig) + "' not found in bindrcpp");
@@ -30,7 +30,7 @@ namespace bindrcpp {
         static Ptr_create_env_string p_create_env_string = NULL;
         if (p_create_env_string == NULL) {
             validateSignature("Environment(*create_env_string)(CharacterVector,bindrcpp::GETTER_FUNC_STRING,bindrcpp::PAYLOAD,Environment)");
-            p_create_env_string = (Ptr_create_env_string)R_GetCCallable("bindrcpp", "bindrcpp_create_env_string");
+            p_create_env_string = (Ptr_create_env_string)R_GetCCallable("bindrcpp", "_bindrcpp_create_env_string");
         }
         RObject rcpp_result_gen;
         {
@@ -40,7 +40,7 @@ namespace bindrcpp {
         if (rcpp_result_gen.inherits("interrupted-error"))
             throw Rcpp::internal::InterruptedException();
         if (rcpp_result_gen.inherits("try-error"))
-            throw Rcpp::exception(as<std::string>(rcpp_result_gen).c_str());
+            throw Rcpp::exception(Rcpp::as<std::string>(rcpp_result_gen).c_str());
         return Rcpp::as<Environment >(rcpp_result_gen);
     }
 
@@ -49,7 +49,7 @@ namespace bindrcpp {
         static Ptr_populate_env_string p_populate_env_string = NULL;
         if (p_populate_env_string == NULL) {
             validateSignature("Environment(*populate_env_string)(Environment,CharacterVector,bindrcpp::GETTER_FUNC_STRING,bindrcpp::PAYLOAD)");
-            p_populate_env_string = (Ptr_populate_env_string)R_GetCCallable("bindrcpp", "bindrcpp_populate_env_string");
+            p_populate_env_string = (Ptr_populate_env_string)R_GetCCallable("bindrcpp", "_bindrcpp_populate_env_string");
         }
         RObject rcpp_result_gen;
         {
@@ -59,7 +59,7 @@ namespace bindrcpp {
         if (rcpp_result_gen.inherits("interrupted-error"))
             throw Rcpp::internal::InterruptedException();
         if (rcpp_result_gen.inherits("try-error"))
-            throw Rcpp::exception(as<std::string>(rcpp_result_gen).c_str());
+            throw Rcpp::exception(Rcpp::as<std::string>(rcpp_result_gen).c_str());
         return Rcpp::as<Environment >(rcpp_result_gen);
     }
 
@@ -68,7 +68,7 @@ namespace bindrcpp {
         static Ptr_create_env_symbol p_create_env_symbol = NULL;
         if (p_create_env_symbol == NULL) {
             validateSignature("Environment(*create_env_symbol)(CharacterVector,bindrcpp::GETTER_FUNC_SYMBOL,bindrcpp::PAYLOAD,Environment)");
-            p_create_env_symbol = (Ptr_create_env_symbol)R_GetCCallable("bindrcpp", "bindrcpp_create_env_symbol");
+            p_create_env_symbol = (Ptr_create_env_symbol)R_GetCCallable("bindrcpp", "_bindrcpp_create_env_symbol");
         }
         RObject rcpp_result_gen;
         {
@@ -78,7 +78,7 @@ namespace bindrcpp {
         if (rcpp_result_gen.inherits("interrupted-error"))
             throw Rcpp::internal::InterruptedException();
         if (rcpp_result_gen.inherits("try-error"))
-            throw Rcpp::exception(as<std::string>(rcpp_result_gen).c_str());
+            throw Rcpp::exception(Rcpp::as<std::string>(rcpp_result_gen).c_str());
         return Rcpp::as<Environment >(rcpp_result_gen);
     }
 
@@ -87,7 +87,7 @@ namespace bindrcpp {
         static Ptr_populate_env_symbol p_populate_env_symbol = NULL;
         if (p_populate_env_symbol == NULL) {
             validateSignature("Environment(*populate_env_symbol)(Environment,CharacterVector,bindrcpp::GETTER_FUNC_SYMBOL,bindrcpp::PAYLOAD)");
-            p_populate_env_symbol = (Ptr_populate_env_symbol)R_GetCCallable("bindrcpp", "bindrcpp_populate_env_symbol");
+            p_populate_env_symbol = (Ptr_populate_env_symbol)R_GetCCallable("bindrcpp", "_bindrcpp_populate_env_symbol");
         }
         RObject rcpp_result_gen;
         {
@@ -97,7 +97,7 @@ namespace bindrcpp {
         if (rcpp_result_gen.inherits("interrupted-error"))
             throw Rcpp::internal::InterruptedException();
         if (rcpp_result_gen.inherits("try-error"))
-            throw Rcpp::exception(as<std::string>(rcpp_result_gen).c_str());
+            throw Rcpp::exception(Rcpp::as<std::string>(rcpp_result_gen).c_str());
         return Rcpp::as<Environment >(rcpp_result_gen);
     }
 
