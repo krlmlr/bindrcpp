@@ -12,7 +12,7 @@ using namespace Rcpp;
 using namespace bindrcpp;
 
 // [[Rcpp::export(rng = FALSE)]]
-SEXP callback_string(Symbol name, bindrcpp::GETTER_FUNC_STRING fun, bindrcpp::PAYLOAD payload) {
+SEXP callback_string_typed(Symbol name, bindrcpp::GETTER_FUNC_STRING_TYPED fun, bindrcpp::PAYLOAD payload) {
   LOG_VERBOSE << type2name(name);
   LOG_VERBOSE << payload.p;
 
@@ -23,9 +23,26 @@ SEXP callback_string(Symbol name, bindrcpp::GETTER_FUNC_STRING fun, bindrcpp::PA
 }
 
 // [[Rcpp::export(rng = FALSE)]]
-SEXP callback_symbol(Symbol name, bindrcpp::GETTER_FUNC_SYMBOL fun, bindrcpp::PAYLOAD payload) {
+SEXP callback_symbol_typed(Symbol name, bindrcpp::GETTER_FUNC_SYMBOL_TYPED fun, bindrcpp::PAYLOAD payload) {
   LOG_VERBOSE << type2name(name);
   LOG_VERBOSE << payload.p;
+
+  return fun(name, payload);
+}
+
+// [[Rcpp::export(rng = FALSE)]]
+SEXP callback_string_wrapped(Symbol name, bindrcpp::GETTER_FUNC_STRING_WRAPPED fun, List payload) {
+  LOG_VERBOSE << type2name(name);
+
+  String name_string = name.c_str();
+  name_string.set_encoding(CE_NATIVE);
+
+  return fun(name_string, payload);
+}
+
+// [[Rcpp::export(rng = FALSE)]]
+SEXP callback_symbol_wrapped(Symbol name, bindrcpp::GETTER_FUNC_SYMBOL_WRAPPED fun, List payload) {
+  LOG_VERBOSE << type2name(name);
 
   return fun(name, payload);
 }
@@ -38,15 +55,17 @@ public:
   CallbackTester() : magic(MAGIC) { LOG_VERBOSE; }
   ~CallbackTester() { LOG_VERBOSE; }
 
-  static SEXP tolower_static(const Rcpp::String& name, PAYLOAD payload) {
-    LOG_VERBOSE << payload.p;
-    CallbackTester* this_ = reinterpret_cast<CallbackTester*>(payload.p);
+  static SEXP tolower_static(const Rcpp::String& name, List payload) {
+    XPtr<CallbackTester> p = payload[0];
+    CallbackTester* this_ = p.get();
+    LOG_VERBOSE << this_;
     return this_->tolower(name);
   }
 
-  static SEXP toupper_static(const Rcpp::String& name, PAYLOAD payload) {
-    LOG_VERBOSE << payload.p;
-    CallbackTester* this_ = reinterpret_cast<CallbackTester*>(payload.p);
+  static SEXP toupper_static(const Rcpp::String& name, List payload) {
+    XPtr<CallbackTester> p = payload[0];
+    CallbackTester* this_ = p.get();
+    LOG_VERBOSE << this_;
     return this_->toupper(name);
   }
 
@@ -71,21 +90,17 @@ private:
 };
 
 // [[Rcpp::export]]
-List do_test_create_environment(CharacterVector names, String xform, Environment parent) {
-  CallbackTester* pc = new CallbackTester;
-
-  List ret = List::create(_["callback"] = XPtr<CallbackTester>(pc));
+Environment do_test_create_environment(CharacterVector names, String xform, Environment parent) {
+  List payload = List::create(_["callback"] = XPtr<CallbackTester>(new CallbackTester));
 
   if (xform == "tolower") {
-    ret["env"] = bindrcpp::create_env_string(
-      names, &CallbackTester::tolower_static, PAYLOAD(pc), parent);
+    return bindrcpp::create_env_string_wrapped(
+      names, &CallbackTester::tolower_static, payload, parent);
   }
   else if (xform == "toupper") {
-    ret["env"] = bindrcpp::create_env_string(
-      names, &CallbackTester::toupper_static, PAYLOAD(pc), parent);
+    return bindrcpp::create_env_string_wrapped(
+      names, &CallbackTester::toupper_static, payload, parent);
   }
   else
     stop("unknown xform");
-
-  return ret;
 }

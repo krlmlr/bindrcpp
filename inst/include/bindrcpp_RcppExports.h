@@ -25,6 +25,158 @@ namespace bindrcpp {
         }
     }
 
+    inline Environment create_env_string_typed(CharacterVector names, bindrcpp::GETTER_FUNC_STRING_TYPED fun, bindrcpp::PAYLOAD payload, Environment enclos) {
+        typedef SEXP(*Ptr_create_env_string_typed)(SEXP,SEXP,SEXP,SEXP);
+        static Ptr_create_env_string_typed p_create_env_string_typed = NULL;
+        if (p_create_env_string_typed == NULL) {
+            validateSignature("Environment(*create_env_string_typed)(CharacterVector,bindrcpp::GETTER_FUNC_STRING_TYPED,bindrcpp::PAYLOAD,Environment)");
+            p_create_env_string_typed = (Ptr_create_env_string_typed)R_GetCCallable("bindrcpp", "_bindrcpp_create_env_string_typed");
+        }
+        RObject rcpp_result_gen;
+        {
+            RNGScope RCPP_rngScope_gen;
+            rcpp_result_gen = p_create_env_string_typed(Shield<SEXP>(Rcpp::wrap(names)), Shield<SEXP>(Rcpp::wrap(fun)), Shield<SEXP>(Rcpp::wrap(payload)), Shield<SEXP>(Rcpp::wrap(enclos)));
+        }
+        if (rcpp_result_gen.inherits("interrupted-error"))
+            throw Rcpp::internal::InterruptedException();
+        if (rcpp_result_gen.inherits("try-error"))
+            throw Rcpp::exception(Rcpp::as<std::string>(rcpp_result_gen).c_str());
+        return Rcpp::as<Environment >(rcpp_result_gen);
+    }
+
+    inline Environment populate_env_string_typed(Environment env, CharacterVector names, bindrcpp::GETTER_FUNC_STRING_TYPED fun, bindrcpp::PAYLOAD payload) {
+        typedef SEXP(*Ptr_populate_env_string_typed)(SEXP,SEXP,SEXP,SEXP);
+        static Ptr_populate_env_string_typed p_populate_env_string_typed = NULL;
+        if (p_populate_env_string_typed == NULL) {
+            validateSignature("Environment(*populate_env_string_typed)(Environment,CharacterVector,bindrcpp::GETTER_FUNC_STRING_TYPED,bindrcpp::PAYLOAD)");
+            p_populate_env_string_typed = (Ptr_populate_env_string_typed)R_GetCCallable("bindrcpp", "_bindrcpp_populate_env_string_typed");
+        }
+        RObject rcpp_result_gen;
+        {
+            RNGScope RCPP_rngScope_gen;
+            rcpp_result_gen = p_populate_env_string_typed(Shield<SEXP>(Rcpp::wrap(env)), Shield<SEXP>(Rcpp::wrap(names)), Shield<SEXP>(Rcpp::wrap(fun)), Shield<SEXP>(Rcpp::wrap(payload)));
+        }
+        if (rcpp_result_gen.inherits("interrupted-error"))
+            throw Rcpp::internal::InterruptedException();
+        if (rcpp_result_gen.inherits("try-error"))
+            throw Rcpp::exception(Rcpp::as<std::string>(rcpp_result_gen).c_str());
+        return Rcpp::as<Environment >(rcpp_result_gen);
+    }
+
+    inline Environment create_env_symbol_typed(CharacterVector names, bindrcpp::GETTER_FUNC_SYMBOL_TYPED fun, bindrcpp::PAYLOAD payload, Environment enclos) {
+        typedef SEXP(*Ptr_create_env_symbol_typed)(SEXP,SEXP,SEXP,SEXP);
+        static Ptr_create_env_symbol_typed p_create_env_symbol_typed = NULL;
+        if (p_create_env_symbol_typed == NULL) {
+            validateSignature("Environment(*create_env_symbol_typed)(CharacterVector,bindrcpp::GETTER_FUNC_SYMBOL_TYPED,bindrcpp::PAYLOAD,Environment)");
+            p_create_env_symbol_typed = (Ptr_create_env_symbol_typed)R_GetCCallable("bindrcpp", "_bindrcpp_create_env_symbol_typed");
+        }
+        RObject rcpp_result_gen;
+        {
+            RNGScope RCPP_rngScope_gen;
+            rcpp_result_gen = p_create_env_symbol_typed(Shield<SEXP>(Rcpp::wrap(names)), Shield<SEXP>(Rcpp::wrap(fun)), Shield<SEXP>(Rcpp::wrap(payload)), Shield<SEXP>(Rcpp::wrap(enclos)));
+        }
+        if (rcpp_result_gen.inherits("interrupted-error"))
+            throw Rcpp::internal::InterruptedException();
+        if (rcpp_result_gen.inherits("try-error"))
+            throw Rcpp::exception(Rcpp::as<std::string>(rcpp_result_gen).c_str());
+        return Rcpp::as<Environment >(rcpp_result_gen);
+    }
+
+    inline Environment populate_env_symbol_typed(Environment env, CharacterVector names, bindrcpp::GETTER_FUNC_SYMBOL_TYPED fun, bindrcpp::PAYLOAD payload) {
+        typedef SEXP(*Ptr_populate_env_symbol_typed)(SEXP,SEXP,SEXP,SEXP);
+        static Ptr_populate_env_symbol_typed p_populate_env_symbol_typed = NULL;
+        if (p_populate_env_symbol_typed == NULL) {
+            validateSignature("Environment(*populate_env_symbol_typed)(Environment,CharacterVector,bindrcpp::GETTER_FUNC_SYMBOL_TYPED,bindrcpp::PAYLOAD)");
+            p_populate_env_symbol_typed = (Ptr_populate_env_symbol_typed)R_GetCCallable("bindrcpp", "_bindrcpp_populate_env_symbol_typed");
+        }
+        RObject rcpp_result_gen;
+        {
+            RNGScope RCPP_rngScope_gen;
+            rcpp_result_gen = p_populate_env_symbol_typed(Shield<SEXP>(Rcpp::wrap(env)), Shield<SEXP>(Rcpp::wrap(names)), Shield<SEXP>(Rcpp::wrap(fun)), Shield<SEXP>(Rcpp::wrap(payload)));
+        }
+        if (rcpp_result_gen.inherits("interrupted-error"))
+            throw Rcpp::internal::InterruptedException();
+        if (rcpp_result_gen.inherits("try-error"))
+            throw Rcpp::exception(Rcpp::as<std::string>(rcpp_result_gen).c_str());
+        return Rcpp::as<Environment >(rcpp_result_gen);
+    }
+
+    inline Environment create_env_string_wrapped(CharacterVector names, bindrcpp::GETTER_FUNC_STRING_WRAPPED fun, List payload, Environment enclos) {
+        typedef SEXP(*Ptr_create_env_string_wrapped)(SEXP,SEXP,SEXP,SEXP);
+        static Ptr_create_env_string_wrapped p_create_env_string_wrapped = NULL;
+        if (p_create_env_string_wrapped == NULL) {
+            validateSignature("Environment(*create_env_string_wrapped)(CharacterVector,bindrcpp::GETTER_FUNC_STRING_WRAPPED,List,Environment)");
+            p_create_env_string_wrapped = (Ptr_create_env_string_wrapped)R_GetCCallable("bindrcpp", "_bindrcpp_create_env_string_wrapped");
+        }
+        RObject rcpp_result_gen;
+        {
+            RNGScope RCPP_rngScope_gen;
+            rcpp_result_gen = p_create_env_string_wrapped(Shield<SEXP>(Rcpp::wrap(names)), Shield<SEXP>(Rcpp::wrap(fun)), Shield<SEXP>(Rcpp::wrap(payload)), Shield<SEXP>(Rcpp::wrap(enclos)));
+        }
+        if (rcpp_result_gen.inherits("interrupted-error"))
+            throw Rcpp::internal::InterruptedException();
+        if (rcpp_result_gen.inherits("try-error"))
+            throw Rcpp::exception(Rcpp::as<std::string>(rcpp_result_gen).c_str());
+        return Rcpp::as<Environment >(rcpp_result_gen);
+    }
+
+    inline Environment populate_env_string_wrapped(Environment env, CharacterVector names, bindrcpp::GETTER_FUNC_STRING_WRAPPED fun, List payload) {
+        typedef SEXP(*Ptr_populate_env_string_wrapped)(SEXP,SEXP,SEXP,SEXP);
+        static Ptr_populate_env_string_wrapped p_populate_env_string_wrapped = NULL;
+        if (p_populate_env_string_wrapped == NULL) {
+            validateSignature("Environment(*populate_env_string_wrapped)(Environment,CharacterVector,bindrcpp::GETTER_FUNC_STRING_WRAPPED,List)");
+            p_populate_env_string_wrapped = (Ptr_populate_env_string_wrapped)R_GetCCallable("bindrcpp", "_bindrcpp_populate_env_string_wrapped");
+        }
+        RObject rcpp_result_gen;
+        {
+            RNGScope RCPP_rngScope_gen;
+            rcpp_result_gen = p_populate_env_string_wrapped(Shield<SEXP>(Rcpp::wrap(env)), Shield<SEXP>(Rcpp::wrap(names)), Shield<SEXP>(Rcpp::wrap(fun)), Shield<SEXP>(Rcpp::wrap(payload)));
+        }
+        if (rcpp_result_gen.inherits("interrupted-error"))
+            throw Rcpp::internal::InterruptedException();
+        if (rcpp_result_gen.inherits("try-error"))
+            throw Rcpp::exception(Rcpp::as<std::string>(rcpp_result_gen).c_str());
+        return Rcpp::as<Environment >(rcpp_result_gen);
+    }
+
+    inline Environment create_env_symbol_wrapped(CharacterVector names, bindrcpp::GETTER_FUNC_SYMBOL_WRAPPED fun, List payload, Environment enclos) {
+        typedef SEXP(*Ptr_create_env_symbol_wrapped)(SEXP,SEXP,SEXP,SEXP);
+        static Ptr_create_env_symbol_wrapped p_create_env_symbol_wrapped = NULL;
+        if (p_create_env_symbol_wrapped == NULL) {
+            validateSignature("Environment(*create_env_symbol_wrapped)(CharacterVector,bindrcpp::GETTER_FUNC_SYMBOL_WRAPPED,List,Environment)");
+            p_create_env_symbol_wrapped = (Ptr_create_env_symbol_wrapped)R_GetCCallable("bindrcpp", "_bindrcpp_create_env_symbol_wrapped");
+        }
+        RObject rcpp_result_gen;
+        {
+            RNGScope RCPP_rngScope_gen;
+            rcpp_result_gen = p_create_env_symbol_wrapped(Shield<SEXP>(Rcpp::wrap(names)), Shield<SEXP>(Rcpp::wrap(fun)), Shield<SEXP>(Rcpp::wrap(payload)), Shield<SEXP>(Rcpp::wrap(enclos)));
+        }
+        if (rcpp_result_gen.inherits("interrupted-error"))
+            throw Rcpp::internal::InterruptedException();
+        if (rcpp_result_gen.inherits("try-error"))
+            throw Rcpp::exception(Rcpp::as<std::string>(rcpp_result_gen).c_str());
+        return Rcpp::as<Environment >(rcpp_result_gen);
+    }
+
+    inline Environment populate_env_symbol_wrapped(Environment env, CharacterVector names, bindrcpp::GETTER_FUNC_SYMBOL_WRAPPED fun, List payload) {
+        typedef SEXP(*Ptr_populate_env_symbol_wrapped)(SEXP,SEXP,SEXP,SEXP);
+        static Ptr_populate_env_symbol_wrapped p_populate_env_symbol_wrapped = NULL;
+        if (p_populate_env_symbol_wrapped == NULL) {
+            validateSignature("Environment(*populate_env_symbol_wrapped)(Environment,CharacterVector,bindrcpp::GETTER_FUNC_SYMBOL_WRAPPED,List)");
+            p_populate_env_symbol_wrapped = (Ptr_populate_env_symbol_wrapped)R_GetCCallable("bindrcpp", "_bindrcpp_populate_env_symbol_wrapped");
+        }
+        RObject rcpp_result_gen;
+        {
+            RNGScope RCPP_rngScope_gen;
+            rcpp_result_gen = p_populate_env_symbol_wrapped(Shield<SEXP>(Rcpp::wrap(env)), Shield<SEXP>(Rcpp::wrap(names)), Shield<SEXP>(Rcpp::wrap(fun)), Shield<SEXP>(Rcpp::wrap(payload)));
+        }
+        if (rcpp_result_gen.inherits("interrupted-error"))
+            throw Rcpp::internal::InterruptedException();
+        if (rcpp_result_gen.inherits("try-error"))
+            throw Rcpp::exception(Rcpp::as<std::string>(rcpp_result_gen).c_str());
+        return Rcpp::as<Environment >(rcpp_result_gen);
+    }
+
     inline Environment create_env_string(CharacterVector names, bindrcpp::GETTER_FUNC_STRING fun, bindrcpp::PAYLOAD payload, Environment enclos) {
         typedef SEXP(*Ptr_create_env_string)(SEXP,SEXP,SEXP,SEXP);
         static Ptr_create_env_string p_create_env_string = NULL;

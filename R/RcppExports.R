@@ -14,12 +14,20 @@ init_logging <- function(log_level) {
     invisible(.Call('_bindrcpp_init_logging', PACKAGE = 'bindrcpp', log_level))
 }
 
-callback_string <- function(name, fun, payload) {
-    .Call('_bindrcpp_callback_string', PACKAGE = 'bindrcpp', name, fun, payload)
+callback_string_typed <- function(name, fun, payload) {
+    .Call('_bindrcpp_callback_string_typed', PACKAGE = 'bindrcpp', name, fun, payload)
 }
 
-callback_symbol <- function(name, fun, payload) {
-    .Call('_bindrcpp_callback_symbol', PACKAGE = 'bindrcpp', name, fun, payload)
+callback_symbol_typed <- function(name, fun, payload) {
+    .Call('_bindrcpp_callback_symbol_typed', PACKAGE = 'bindrcpp', name, fun, payload)
+}
+
+callback_string_wrapped <- function(name, fun, payload) {
+    .Call('_bindrcpp_callback_string_wrapped', PACKAGE = 'bindrcpp', name, fun, payload)
+}
+
+callback_symbol_wrapped <- function(name, fun, payload) {
+    .Call('_bindrcpp_callback_symbol_wrapped', PACKAGE = 'bindrcpp', name, fun, payload)
 }
 
 do_test_create_environment <- function(names, xform, parent) {
