@@ -4,7 +4,6 @@
 \name{reexports}
 \alias{reexports}
 \alias{create_env}
-\alias{reexports}
 \alias{populate_env}
 \title{Objects exported from other packages}
 \keyword{internal}
