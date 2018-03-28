@@ -1,5 +1,5 @@
 ## Test environments
-* local ubuntu 17.04 install, R 3.4.0
+* local ubuntu 17.10 install, R 3.4.3
 * ubuntu 12.04 (on travis-ci), R devel, release, and oldrel, and OS X
 * win-builder (devel and release)
 
@@ -10,4 +10,4 @@
 
 ## Reverse dependencies
 
-Checked the single dependency dplyr.
+Checked the two downstream dependencies dplyr and valr.
