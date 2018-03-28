@@ -3,7 +3,7 @@ Title: An 'Rcpp' Interface to Active Bindings
 Version: 0.2.1
 Date: 2018-03-28
 Authors@R: c(
-    person("Kirill", "Müller", role = c("aut", "cre"), email = "krlmlr+r@mailbox.org"),
+    person("Kirill", "M\u00fcller", role = c("aut", "cre"), email = "krlmlr+r@mailbox.org", comment = c(ORCID = "0000-0002-1416-3412")),
     person("RStudio", role = "cph")
     )
 Description: Provides an easy way to fill an environment with active bindings
