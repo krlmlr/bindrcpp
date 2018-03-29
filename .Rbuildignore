@@ -17,3 +17,4 @@
 ^docs$
 ^cran-comments\.md$
 ^cmake-build-debug$
+^CRAN-RELEASE$
