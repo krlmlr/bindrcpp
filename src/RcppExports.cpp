@@ -512,11 +512,6 @@ RcppExport SEXP _bindrcpp_RcppExport_registerCCallable() {
     R_RegisterCCallable("bindrcpp", "_bindrcpp_create_env_symbol", (DL_FUNC)_bindrcpp_create_env_symbol_imp_try);
     R_RegisterCCallable("bindrcpp", "_bindrcpp_populate_env_symbol", (DL_FUNC)_bindrcpp_populate_env_symbol_imp_try);
     R_RegisterCCallable("bindrcpp", "_bindrcpp_RcppExport_validate", (DL_FUNC)_bindrcpp_RcppExport_validate);
-    R_RegisterCCallable("bindrcpp", "bindrcpp_create_env_string", (DL_FUNC)_bindrcpp_create_env_string_imp_try);
-    R_RegisterCCallable("bindrcpp", "bindrcpp_populate_env_string", (DL_FUNC)_bindrcpp_populate_env_string_imp_try);
-    R_RegisterCCallable("bindrcpp", "bindrcpp_create_env_symbol", (DL_FUNC)_bindrcpp_create_env_symbol_imp_try);
-    R_RegisterCCallable("bindrcpp", "bindrcpp_populate_env_symbol", (DL_FUNC)_bindrcpp_populate_env_symbol_imp_try);
-    R_RegisterCCallable("bindrcpp", "bindrcpp_RcppExport_validate", (DL_FUNC)_bindrcpp_RcppExport_validate);
     return R_NilValue;
 }
 
@@ -540,15 +535,6 @@ static const R_CallMethodDef CallEntries[] = {
     {"_bindrcpp_callback_symbol_wrapped", (DL_FUNC) &_bindrcpp_callback_symbol_wrapped, 3},
     {"_bindrcpp_do_test_create_environment", (DL_FUNC) &_bindrcpp_do_test_create_environment, 3},
     {"_bindrcpp_RcppExport_registerCCallable", (DL_FUNC) &_bindrcpp_RcppExport_registerCCallable, 0},
-    {"bindrcpp_create_env_string_imp", (DL_FUNC) &_bindrcpp_create_env_string_imp, 4},
-    {"bindrcpp_populate_env_string_imp", (DL_FUNC) &_bindrcpp_populate_env_string_imp, 4},
-    {"bindrcpp_create_env_symbol_imp", (DL_FUNC) &_bindrcpp_create_env_symbol_imp, 4},
-    {"bindrcpp_populate_env_symbol_imp", (DL_FUNC) &_bindrcpp_populate_env_symbol_imp, 4},
-    {"bindrcpp_init_logging", (DL_FUNC) &_bindrcpp_init_logging, 1},
-    {"bindrcpp_callback_string", (DL_FUNC) &_bindrcpp_callback_string_typed, 3},
-    {"bindrcpp_callback_symbol", (DL_FUNC) &_bindrcpp_callback_symbol_typed, 3},
-    {"bindrcpp_do_test_create_environment", (DL_FUNC) &_bindrcpp_do_test_create_environment, 3},
-    {"bindrcpp_RcppExport_registerCCallable", (DL_FUNC) &_bindrcpp_RcppExport_registerCCallable, 0},
     {NULL, NULL, 0}
 };
 
