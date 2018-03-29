@@ -1,3 +1,8 @@
+# bindrcpp 0.2.2.9000 (2018-03-29)
+
+- No changes.
+
+
 # bindrcpp 0.2.2 (2018-03-29)
 
 - Fix compatibility with dplyr installed and built against an older version of bindrcpp.
