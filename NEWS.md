@@ -1,5 +1,6 @@
-# bindrcpp 0.2.1 (2018-03-28)
+# bindrcpp 0.2.2 (2018-03-29)
 
+- Fix compatibility with dplyr installed and built against an older version of bindrcpp.
 - Support callbacks that accept a list. The new `xxx_env_yyy_wrapped()` functions expect a list as payload, and a callback function with `List` instead of `PAYLOAD` as second argument. This helps controlling the lifetime of objects associated with a callback: these can be placed in an `XPtr` inside the `List`. The `xxx_env_yyy()` functions have been aliased to `xxx_env_yyy_typed()` (#7).
 - Bump dependency to bindr 0.1.1.
 
