@@ -1,6 +1,6 @@
 add_package_checks()
 
-if (Sys.getenv("BUILD_PKGDOWN") != "") {
+if (Sys.getenv("BUILD_PKGDOWN") != "" && !ci()$is_tag()) {
   get_stage("deploy") %>%
     add_step(step_build_pkgdown())
 
