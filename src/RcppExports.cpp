@@ -9,6 +9,11 @@
 
 using namespace Rcpp;
 
+#ifdef RCPP_USE_GLOBAL_ROSTREAM
+Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
+Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
+#endif
+
 // create_env_string_typed_imp
 Environment create_env_string_typed_imp(CharacterVector names, bindrcpp::GETTER_FUNC_STRING_TYPED fun, bindrcpp::PAYLOAD payload, Environment enclos);
 static SEXP _bindrcpp_create_env_string_typed_imp_try(SEXP namesSEXP, SEXP funSEXP, SEXP payloadSEXP, SEXP enclosSEXP) {
@@ -32,6 +37,10 @@ RcppExport SEXP _bindrcpp_create_env_string_typed_imp(SEXP namesSEXP, SEXP funSE
     if (rcpp_isInterrupt_gen) {
         UNPROTECT(1);
         Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
     }
     Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
     if (rcpp_isError_gen) {
@@ -66,6 +75,10 @@ RcppExport SEXP _bindrcpp_populate_env_string_typed_imp(SEXP envSEXP, SEXP names
         UNPROTECT(1);
         Rf_onintr();
     }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
     Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
     if (rcpp_isError_gen) {
         SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
@@ -98,6 +111,10 @@ RcppExport SEXP _bindrcpp_create_env_symbol_typed_imp(SEXP namesSEXP, SEXP funSE
     if (rcpp_isInterrupt_gen) {
         UNPROTECT(1);
         Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
     }
     Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
     if (rcpp_isError_gen) {
@@ -132,6 +149,10 @@ RcppExport SEXP _bindrcpp_populate_env_symbol_typed_imp(SEXP envSEXP, SEXP names
         UNPROTECT(1);
         Rf_onintr();
     }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
     Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
     if (rcpp_isError_gen) {
         SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
@@ -164,6 +185,10 @@ RcppExport SEXP _bindrcpp_create_env_string_wrapped_imp(SEXP namesSEXP, SEXP fun
     if (rcpp_isInterrupt_gen) {
         UNPROTECT(1);
         Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
     }
     Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
     if (rcpp_isError_gen) {
@@ -198,6 +223,10 @@ RcppExport SEXP _bindrcpp_populate_env_string_wrapped_imp(SEXP envSEXP, SEXP nam
         UNPROTECT(1);
         Rf_onintr();
     }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
     Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
     if (rcpp_isError_gen) {
         SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
@@ -230,6 +259,10 @@ RcppExport SEXP _bindrcpp_create_env_symbol_wrapped_imp(SEXP namesSEXP, SEXP fun
     if (rcpp_isInterrupt_gen) {
         UNPROTECT(1);
         Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
     }
     Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
     if (rcpp_isError_gen) {
@@ -264,6 +297,10 @@ RcppExport SEXP _bindrcpp_populate_env_symbol_wrapped_imp(SEXP envSEXP, SEXP nam
         UNPROTECT(1);
         Rf_onintr();
     }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
     Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
     if (rcpp_isError_gen) {
         SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
@@ -296,6 +333,10 @@ RcppExport SEXP _bindrcpp_create_env_string_imp(SEXP namesSEXP, SEXP funSEXP, SE
     if (rcpp_isInterrupt_gen) {
         UNPROTECT(1);
         Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
     }
     Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
     if (rcpp_isError_gen) {
@@ -330,6 +371,10 @@ RcppExport SEXP _bindrcpp_populate_env_string_imp(SEXP envSEXP, SEXP namesSEXP, 
         UNPROTECT(1);
         Rf_onintr();
     }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
     Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
     if (rcpp_isError_gen) {
         SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
@@ -363,6 +408,10 @@ RcppExport SEXP _bindrcpp_create_env_symbol_imp(SEXP namesSEXP, SEXP funSEXP, SE
         UNPROTECT(1);
         Rf_onintr();
     }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
+    }
     Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
     if (rcpp_isError_gen) {
         SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
@@ -395,6 +444,10 @@ RcppExport SEXP _bindrcpp_populate_env_symbol_imp(SEXP envSEXP, SEXP namesSEXP, 
     if (rcpp_isInterrupt_gen) {
         UNPROTECT(1);
         Rf_onintr();
+    }
+    bool rcpp_isLongjump_gen = Rcpp::internal::isLongjumpSentinel(rcpp_result_gen);
+    if (rcpp_isLongjump_gen) {
+        Rcpp::internal::resumeJump(rcpp_result_gen);
     }
     Rboolean rcpp_isError_gen = Rf_inherits(rcpp_result_gen, "try-error");
     if (rcpp_isError_gen) {
