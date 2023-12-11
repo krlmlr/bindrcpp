@@ -68,7 +68,8 @@
 <div class="section level1">
 <div class="page-header"><h1 id="bindrcpp">bindrcpp<a class="anchor" aria-label="anchor" href="#bindrcpp"></a>
 </h1></div>
-<p><a href="https://travis-ci.org/krlmlr/bindrcpp" class="external-link"><img src="https://travis-ci.org/krlmlr/bindrcpp.svg?branch=master" alt="Travis-CI Build Status"></a> <a href="https://ci.appveyor.com/project/krlmlr/bindrcpp" class="external-link"><img src="https://ci.appveyor.com/api/projects/status/github/krlmlr/bindrcpp?branch=master&amp;svg=true" alt="AppVeyor Build Status"></a> <a href="https://cran.r-project.org/package=bindrcpp" class="external-link"><img src="http://www.r-pkg.org/badges/version/bindrcpp" alt="CRAN_Status_Badge"></a></p>
+<!-- badges: start -->
+
 <p>It’s easy to create active bindings in R via <a href="https://www.rdocumentation.org/packages/base/versions/3.3.1/topics/bindenv" class="external-link"><code>makeActiveBinding()</code></a>. This package faciliates the creation of active bindings that link back to C++ code. It provides an interface that allows binding several identifiers in an environment to the same C++ function, which is then called with the name (and a payload) as argument.</p>
 <p>It is recommended to use the newer <code>_wrapped</code> functions that support passing an arbitrary <code>Rcpp::List</code> as payload. This allows to store an <code>Rcpp::XPtr</code> to a C++ object in that list. The <code>XPtr</code> then will be released when the payload is garbage-collected, and the C++ object will be destroyed.</p>
 <div class="section level2">
@@ -163,7 +164,14 @@
 </ul>
 </div>
 
-
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
+<ul class="list-unstyled">
+<li><a href="https://github.com/krlmlr/bindrcpp/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/krlmlr/bindrcpp/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
+<li><a href="https://ci.appveyor.com/project/krlmlr/bindrcpp" class="external-link"><img src="https://ci.appveyor.com/api/projects/status/github/krlmlr/bindrcpp?branch=master&amp;svg=true" alt="AppVeyor Build Status"></a></li>
+<li><a href="https://cran.r-project.org/package=bindrcpp" class="external-link"><img src="http://www.r-pkg.org/badges/version/bindrcpp" alt="CRAN_Status_Badge"></a></li>
+</ul>
+</div>
 
   </div>
 </div>
