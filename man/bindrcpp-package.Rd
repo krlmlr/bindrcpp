@@ -28,7 +28,7 @@ environment instead of creating a new one.
 Useful links:
 \itemize{
   \item \url{https://github.com/krlmlr/bindrcpp}
-  \item \url{https://krlmlr.github.io/bindrcpp}
+  \item \url{https://krlmlr.github.io/bindrcpp/}
   \item Report bugs at \url{https://github.com/krlmlr/bindrcpp/issues}
 }
 

@@ -1,21 +1,14 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
-# bindrcpp 0.2.2.9001 (2023-12-11)
+# bindrcpp 0.2.3 (2023-12-11)
+
+## Bugfix
+
+- Fix `-Wformat-security` warning with R-devel
 
 ## Chore
 
 - Install Rcpp from GitHub for CI/CD.
-
-- Build-ignore.
-
-## fledge
-
-- Bump version to 0.2.2.9000.
-
-
-# bindrcpp 0.2.2.9000 (2018-03-29)
-
-- No changes.
 
 
 # bindrcpp 0.2.2 (2018-03-29)
