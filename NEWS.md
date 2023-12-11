@@ -1,19 +1,17 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
-# bindrcpp 0.2.2.9001 (2023-12-11)
-
-## Chore
-
-- Install Rcpp from GitHub for CI/CD.
-
-- Build-ignore.
+# bindrcpp 0.2.3 (2023-12-11)
 
 ## fledge
 
 - Bump version to 0.2.2.9000.
 
+## Chore
 
-# bindrcpp 0.2.2.9000 (2018-03-29)
+- Install Rcpp from GitHub for CI/CD.
+- Build-ignore.
+
+## Uncategorized
 
 - No changes.
 
