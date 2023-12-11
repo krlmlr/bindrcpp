@@ -2,18 +2,13 @@
 
 # bindrcpp 0.2.3 (2023-12-11)
 
-## fledge
+## Bugfix
 
-- Bump version to 0.2.2.9000.
+- Fix `-Wformat-security` warning with R-devel
 
 ## Chore
 
 - Install Rcpp from GitHub for CI/CD.
-- Build-ignore.
-
-## Uncategorized
-
-- No changes.
 
 
 # bindrcpp 0.2.2 (2018-03-29)
