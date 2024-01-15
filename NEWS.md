@@ -1,5 +1,10 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# bindrcpp 0.2.3.9001 (2024-01-15)
+
+- Internal changes only.
+
+
 # bindrcpp 0.2.3.9000 (2023-12-12)
 
 - Merge branch 'cran-0.2.3'.
