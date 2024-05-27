@@ -1,5 +1,12 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# bindrcpp 0.2.3.9003 (2024-05-27)
+
+## Chore
+
+- Bump.
+
+
 # bindrcpp 0.2.3.9002 (2024-01-24)
 
 - Internal changes only.
