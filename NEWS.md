@@ -1,5 +1,18 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# bindrcpp 0.2.3.9007 (2024-08-02)
+
+## Chore
+
+- Auto-update from GitHub Actions.
+
+  Run: https://github.com/krlmlr/bindrcpp/actions/runs/10200119080
+
+## Continuous integration
+
+- Use dev roxygen2 and decor.
+
+
 # bindrcpp 0.2.3.9006 (2024-07-02)
 
 ## Continuous integration
