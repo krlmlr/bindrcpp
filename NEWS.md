@@ -1,5 +1,12 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# bindrcpp 0.2.3.9009 (2024-08-10)
+
+## Continuous integration
+
+- Use v2 instead of master.
+
+
 # bindrcpp 0.2.3.9008 (2024-08-06)
 
 ## Continuous integration
