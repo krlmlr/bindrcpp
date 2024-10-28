@@ -1,5 +1,18 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# bindrcpp 0.2.3.9013 (2024-10-28)
+
+## Continuous integration
+
+  - Use pkgdown branch (#13).
+    
+      - ci: Use pkgdown branch
+    
+      - ci: Updates from duckdb
+    
+      - ci: Trigger run
+
+
 # bindrcpp 0.2.3.9012 (2024-09-15)
 
 ## Continuous integration
