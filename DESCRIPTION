@@ -1,7 +1,7 @@
 Package: bindrcpp
 Title: An 'Rcpp' Interface to Active Bindings
-Version: 0.2.3.9014
-Date: 2024-11-11
+Version: 0.2.3.9015
+Date: 2024-11-18
 Authors@R: c(
     person("Kirill", "Müller", , "kirill@cynkra.com", role = c("aut", "cre"),
            comment = c(ORCID = "0000-0002-1416-3412")),

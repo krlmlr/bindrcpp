@@ -1,5 +1,12 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# bindrcpp 0.2.3.9015 (2024-11-18)
+
+## Continuous integration
+
+  - Use stable pak (#15).
+
+
 # bindrcpp 0.2.3.9014 (2024-11-11)
 
 ## Continuous integration
