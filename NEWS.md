@@ -1,5 +1,12 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# bindrcpp 0.2.3.9016 (2024-11-22)
+
+## Continuous integration
+
+  - Correctly detect branch protection (#16).
+
+
 # bindrcpp 0.2.3.9015 (2024-11-18)
 
 ## Continuous integration
