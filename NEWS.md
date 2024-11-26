@@ -1,5 +1,12 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# bindrcpp 0.2.3.9018 (2024-11-26)
+
+## Continuous integration
+
+- Use styler from main branch (#20).
+
+
 # bindrcpp 0.2.3.9017 (2024-11-25)
 
 ## Continuous integration
