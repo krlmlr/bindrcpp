@@ -1,5 +1,12 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# bindrcpp 0.2.3.9019 (2024-11-27)
+
+## Continuous integration
+
+- Explicit permissions (#21).
+
+
 # bindrcpp 0.2.3.9018 (2024-11-26)
 
 ## Continuous integration
