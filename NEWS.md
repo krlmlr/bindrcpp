@@ -1,5 +1,12 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# bindrcpp 0.2.3.9023 (2024-12-09)
+
+## Continuous integration
+
+- Avoid failure in fledge workflow if no changes (#25).
+
+
 # bindrcpp 0.2.3.9022 (2024-12-08)
 
 ## Continuous integration
