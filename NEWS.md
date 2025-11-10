@@ -1,5 +1,48 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# bindrcpp 0.2.3.9024 (2025-11-10)
+
+## Chore
+
+- Auto-update from GitHub Actions.
+
+  Run: https://github.com/krlmlr/bindrcpp/actions/runs/17450838020
+
+- Auto-update from GitHub Actions.
+
+  Run: https://github.com/krlmlr/bindrcpp/actions/runs/14641090525
+
+## Continuous integration
+
+- Use workflows for fledge (#39).
+
+- Sync (#38).
+
+- Use reviewdog for external PRs (#37).
+
+- Cleanup and fix macOS (#36).
+
+- Format with air, check detritus, better handling of `extra-packages` (#35).
+
+- Enhance permissions for workflow (#34).
+
+- Permissions, better tests for missing suggests, lints (#33).
+
+- Only fail covr builds if token is given (#32).
+
+- Always use `_R_CHECK_FORCE_SUGGESTS_=false` (#31).
+
+- Correct installation of xml2 (#30).
+
+- Explain (#29).
+
+- Add xml2 for covr, print testthat results (#28).
+
+- Fix (#27).
+
+- Sync (#26).
+
+
 # bindrcpp 0.2.3.9023 (2024-12-09)
 
 ## Continuous integration
