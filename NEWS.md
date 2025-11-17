@@ -1,5 +1,12 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# bindrcpp 0.2.3.9026 (2025-11-17)
+
+## Continuous integration
+
+- Install binaries from r-universe for dev workflow (#41).
+
+
 # bindrcpp 0.2.3.9025 (2025-11-12)
 
 ## Continuous integration
