@@ -1,5 +1,16 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# bindrcpp 0.2.3.9027 (2026-01-14)
+
+## Continuous integration
+
+- Fix comment (#44).
+
+- Tweaks (#43).
+
+- Test all R versions on branches that start with cran- (#42).
+
+
 # bindrcpp 0.2.3.9026 (2025-11-17)
 
 ## Continuous integration
