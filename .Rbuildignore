@@ -19,3 +19,5 @@
 ^cmake-build-debug$
 ^CRAN-RELEASE$
 ^\.github$
+^\.clang-format$
+^\.clang-format-ignore$
