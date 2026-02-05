@@ -1,5 +1,18 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# bindrcpp 0.2.3.9028 (2026-02-05)
+
+## Bug fixes
+
+- Register.
+
+## Chore
+
+- Remove plogr (#45).
+
+- Format C++ code.
+
+
 # bindrcpp 0.2.3.9027 (2026-01-14)
 
 ## Continuous integration
