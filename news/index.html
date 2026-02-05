@@ -50,87 +50,9 @@
     <div class="section level2">
 <h2 class="page-header" data-toc-text="0.2.4" id="bindrcpp-024-2026-02-05">bindrcpp 0.2.4 (2026-02-05)<a class="anchor" aria-label="anchor" href="#bindrcpp-024-2026-02-05"></a></h2>
 <div class="section level3">
-<h3 id="bug-fixes-0-2-4">Bug fixes<a class="anchor" aria-label="anchor" href="#bug-fixes-0-2-4"></a></h3>
-<ul><li>Register.</li>
-</ul></div>
-<div class="section level3">
 <h3 id="chore-0-2-4">Chore<a class="anchor" aria-label="anchor" href="#chore-0-2-4"></a></h3>
 <ul><li><p>Remove plogr (<a href="https://github.com/krlmlr/bindrcpp/issues/45" class="external-link">#45</a>).</p></li>
 <li><p>Format C++ code.</p></li>
-<li>
-<p>Auto-update from GitHub Actions.</p>
-<p>Run: <a href="https://github.com/krlmlr/bindrcpp/actions/runs/17450838020" class="external-link uri">https://github.com/krlmlr/bindrcpp/actions/runs/17450838020</a></p>
-<p>Run: <a href="https://github.com/krlmlr/bindrcpp/actions/runs/14641090525" class="external-link uri">https://github.com/krlmlr/bindrcpp/actions/runs/14641090525</a></p>
-<p>Run: <a href="https://github.com/krlmlr/bindrcpp/actions/runs/10425482950" class="external-link uri">https://github.com/krlmlr/bindrcpp/actions/runs/10425482950</a></p>
-<p>Run: <a href="https://github.com/krlmlr/bindrcpp/actions/runs/10200119080" class="external-link uri">https://github.com/krlmlr/bindrcpp/actions/runs/10200119080</a></p>
-<p>Run: <a href="https://github.com/krlmlr/bindrcpp/actions/runs/9727973898" class="external-link uri">https://github.com/krlmlr/bindrcpp/actions/runs/9727973898</a></p>
-<p>Run: <a href="https://github.com/krlmlr/bindrcpp/actions/runs/9691614338" class="external-link uri">https://github.com/krlmlr/bindrcpp/actions/runs/9691614338</a></p>
-</li>
-<li><p>Bump.</p></li>
-</ul></div>
-<div class="section level3">
-<h3 id="continuous-integration-0-2-4">Continuous integration<a class="anchor" aria-label="anchor" href="#continuous-integration-0-2-4"></a></h3>
-<ul><li><p>Fix comment (<a href="https://github.com/krlmlr/bindrcpp/issues/44" class="external-link">#44</a>).</p></li>
-<li><p>Tweaks (<a href="https://github.com/krlmlr/bindrcpp/issues/43" class="external-link">#43</a>).</p></li>
-<li><p>Test all R versions on branches that start with cran- (<a href="https://github.com/krlmlr/bindrcpp/issues/42" class="external-link">#42</a>).</p></li>
-<li><p>Install binaries from r-universe for dev workflow (<a href="https://github.com/krlmlr/bindrcpp/issues/41" class="external-link">#41</a>).</p></li>
-<li><p>Fix reviewdog and add commenting workflow (<a href="https://github.com/krlmlr/bindrcpp/issues/40" class="external-link">#40</a>).</p></li>
-<li><p>Use workflows for fledge (<a href="https://github.com/krlmlr/bindrcpp/issues/39" class="external-link">#39</a>).</p></li>
-<li><p>Sync (<a href="https://github.com/krlmlr/bindrcpp/issues/38" class="external-link">#38</a>).</p></li>
-<li><p>Use reviewdog for external PRs (<a href="https://github.com/krlmlr/bindrcpp/issues/37" class="external-link">#37</a>).</p></li>
-<li><p>Cleanup and fix macOS (<a href="https://github.com/krlmlr/bindrcpp/issues/36" class="external-link">#36</a>).</p></li>
-<li><p>Format with air, check detritus, better handling of <code>extra-packages</code> (<a href="https://github.com/krlmlr/bindrcpp/issues/35" class="external-link">#35</a>).</p></li>
-<li><p>Enhance permissions for workflow (<a href="https://github.com/krlmlr/bindrcpp/issues/34" class="external-link">#34</a>).</p></li>
-<li><p>Permissions, better tests for missing suggests, lints (<a href="https://github.com/krlmlr/bindrcpp/issues/33" class="external-link">#33</a>).</p></li>
-<li><p>Only fail covr builds if token is given (<a href="https://github.com/krlmlr/bindrcpp/issues/32" class="external-link">#32</a>).</p></li>
-<li><p>Always use <code>_R_CHECK_FORCE_SUGGESTS_=false</code> (<a href="https://github.com/krlmlr/bindrcpp/issues/31" class="external-link">#31</a>).</p></li>
-<li><p>Correct installation of xml2 (<a href="https://github.com/krlmlr/bindrcpp/issues/30" class="external-link">#30</a>).</p></li>
-<li><p>Explain (<a href="https://github.com/krlmlr/bindrcpp/issues/29" class="external-link">#29</a>).</p></li>
-<li><p>Add xml2 for covr, print testthat results (<a href="https://github.com/krlmlr/bindrcpp/issues/28" class="external-link">#28</a>).</p></li>
-<li><p>Fix (<a href="https://github.com/krlmlr/bindrcpp/issues/27" class="external-link">#27</a>).</p></li>
-<li><p>Sync (<a href="https://github.com/krlmlr/bindrcpp/issues/26" class="external-link">#26</a>).</p></li>
-<li><p>Avoid failure in fledge workflow if no changes (<a href="https://github.com/krlmlr/bindrcpp/issues/25" class="external-link">#25</a>).</p></li>
-<li><p>Fetch tags for fledge workflow to avoid unnecessary NEWS entries (<a href="https://github.com/krlmlr/bindrcpp/issues/24" class="external-link">#24</a>).</p></li>
-<li><p>Use larger retry count for lock-threads workflow (<a href="https://github.com/krlmlr/bindrcpp/issues/23" class="external-link">#23</a>).</p></li>
-<li><p>Ignore errors when removing pkg-config on macOS (<a href="https://github.com/krlmlr/bindrcpp/issues/22" class="external-link">#22</a>).</p></li>
-<li><p>Explicit permissions (<a href="https://github.com/krlmlr/bindrcpp/issues/21" class="external-link">#21</a>).</p></li>
-<li><p>Use styler from main branch (<a href="https://github.com/krlmlr/bindrcpp/issues/20" class="external-link">#20</a>).</p></li>
-<li><p>Need to install R on Ubuntu 24.04 (<a href="https://github.com/krlmlr/bindrcpp/issues/19" class="external-link">#19</a>).</p></li>
-<li><p>Correctly detect branch protection (<a href="https://github.com/krlmlr/bindrcpp/issues/16" class="external-link">#16</a>).</p></li>
-<li><p>Use Ubuntu 24.04 and styler PR (<a href="https://github.com/krlmlr/bindrcpp/issues/17" class="external-link">#17</a>).</p></li>
-<li><p>Use stable pak (<a href="https://github.com/krlmlr/bindrcpp/issues/15" class="external-link">#15</a>).</p></li>
-<li>
-<p>Trigger run (<a href="https://github.com/krlmlr/bindrcpp/issues/14" class="external-link">#14</a>).</p>
-<ul><li><p>ci: Trigger run</p></li>
-<li><p>ci: Latest changes</p></li>
-</ul></li>
-<li>
-<p>Use pkgdown branch (<a href="https://github.com/krlmlr/bindrcpp/issues/13" class="external-link">#13</a>).</p>
-<ul><li><p>ci: Use pkgdown branch</p></li>
-<li><p>ci: Updates from duckdb</p></li>
-</ul></li>
-<li>
-<p>Install via R CMD INSTALL ., not pak (<a href="https://github.com/krlmlr/bindrcpp/issues/12" class="external-link">#12</a>).</p>
-<ul><li><p>ci: Install via R CMD INSTALL ., not pak</p></li>
-<li><p>ci: Bump version of upload-artifact action</p></li>
-</ul></li>
-<li><p>Install local package for pkgdown builds.</p></li>
-<li><p>Improve support for protected branches with fledge.</p></li>
-<li><p>Improve support for protected branches, without fledge.</p></li>
-<li><p>Sync with latest developments.</p></li>
-<li><p>Use v2 instead of master.</p></li>
-<li><p>Inline action.</p></li>
-<li><p>Use dev roxygen2 and decor.</p></li>
-<li><p>Fix on Windows, tweak lock workflow.</p></li>
-<li><p>Avoid checking bashisms on Windows.</p></li>
-<li><p>Better commit message.</p></li>
-<li><p>Bump versions, better default, consume custom matrix.</p></li>
-<li><p>Recent updates.</p></li>
-</ul></div>
-<div class="section level3">
-<h3 id="uncategorized-0-2-4">Uncategorized<a class="anchor" aria-label="anchor" href="#uncategorized-0-2-4"></a></h3>
-<ul><li><p>Internal changes only.</p></li>
-<li><p>Merge branch ‘cran-0.2.3’.</p></li>
 </ul></div>
 </div>
     <div class="section level2">
