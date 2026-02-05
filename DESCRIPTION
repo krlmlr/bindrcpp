@@ -19,7 +19,6 @@ Imports:
 Suggests: 
     testthat
 LinkingTo: 
-    plogr,
     Rcpp
 Config/Needs/check: RcppCore/Rcpp
 Encoding: UTF-8

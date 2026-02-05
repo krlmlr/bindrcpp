@@ -2,8 +2,6 @@
 
 #include <bindrcpp.h>
 
-#include <plogr.h>
-
 using namespace Rcpp;
 
 Environment pkg_env = Environment::namespace_env("bindrcpp");
@@ -24,7 +22,6 @@ Environment create_env_string_typed_imp(
 ) {
   using namespace bindrcpp;
 
-  LOG_VERBOSE << payload.p;
   return R_create_env(
     names,
     R_callback_string_typed,
@@ -44,7 +41,6 @@ Environment populate_env_string_typed_imp(
 ) {
   using namespace bindrcpp;
 
-  LOG_VERBOSE << payload.p;
   return R_populate_env(env, names, R_callback_string_typed, fun, payload);
 }
 
@@ -58,7 +54,6 @@ Environment create_env_symbol_typed_imp(
 ) {
   using namespace bindrcpp;
 
-  LOG_VERBOSE << payload.p;
   return R_create_env(
     names,
     R_callback_symbol_typed,
@@ -78,7 +73,6 @@ Environment populate_env_symbol_typed_imp(
 ) {
   using namespace bindrcpp;
 
-  LOG_VERBOSE << payload.p;
   return R_populate_env(env, names, R_callback_symbol_typed, fun, payload);
 }
 
