@@ -46,7 +46,7 @@ RcppExport SEXP _bindrcpp_create_env_string_typed_imp(SEXP namesSEXP, SEXP funSE
     if (rcpp_isError_gen) {
         SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
         UNPROTECT(1);
-        Rf_error("%s", CHAR(rcpp_msgSEXP_gen));
+        (Rf_error)("%s", CHAR(rcpp_msgSEXP_gen));
     }
     UNPROTECT(1);
     return rcpp_result_gen;
@@ -83,7 +83,7 @@ RcppExport SEXP _bindrcpp_populate_env_string_typed_imp(SEXP envSEXP, SEXP names
     if (rcpp_isError_gen) {
         SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
         UNPROTECT(1);
-        Rf_error("%s", CHAR(rcpp_msgSEXP_gen));
+        (Rf_error)("%s", CHAR(rcpp_msgSEXP_gen));
     }
     UNPROTECT(1);
     return rcpp_result_gen;
@@ -120,7 +120,7 @@ RcppExport SEXP _bindrcpp_create_env_symbol_typed_imp(SEXP namesSEXP, SEXP funSE
     if (rcpp_isError_gen) {
         SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
         UNPROTECT(1);
-        Rf_error("%s", CHAR(rcpp_msgSEXP_gen));
+        (Rf_error)("%s", CHAR(rcpp_msgSEXP_gen));
     }
     UNPROTECT(1);
     return rcpp_result_gen;
@@ -157,7 +157,7 @@ RcppExport SEXP _bindrcpp_populate_env_symbol_typed_imp(SEXP envSEXP, SEXP names
     if (rcpp_isError_gen) {
         SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
         UNPROTECT(1);
-        Rf_error("%s", CHAR(rcpp_msgSEXP_gen));
+        (Rf_error)("%s", CHAR(rcpp_msgSEXP_gen));
     }
     UNPROTECT(1);
     return rcpp_result_gen;
@@ -194,7 +194,7 @@ RcppExport SEXP _bindrcpp_create_env_string_wrapped_imp(SEXP namesSEXP, SEXP fun
     if (rcpp_isError_gen) {
         SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
         UNPROTECT(1);
-        Rf_error("%s", CHAR(rcpp_msgSEXP_gen));
+        (Rf_error)("%s", CHAR(rcpp_msgSEXP_gen));
     }
     UNPROTECT(1);
     return rcpp_result_gen;
@@ -231,7 +231,7 @@ RcppExport SEXP _bindrcpp_populate_env_string_wrapped_imp(SEXP envSEXP, SEXP nam
     if (rcpp_isError_gen) {
         SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
         UNPROTECT(1);
-        Rf_error("%s", CHAR(rcpp_msgSEXP_gen));
+        (Rf_error)("%s", CHAR(rcpp_msgSEXP_gen));
     }
     UNPROTECT(1);
     return rcpp_result_gen;
@@ -268,7 +268,7 @@ RcppExport SEXP _bindrcpp_create_env_symbol_wrapped_imp(SEXP namesSEXP, SEXP fun
     if (rcpp_isError_gen) {
         SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
         UNPROTECT(1);
-        Rf_error("%s", CHAR(rcpp_msgSEXP_gen));
+        (Rf_error)("%s", CHAR(rcpp_msgSEXP_gen));
     }
     UNPROTECT(1);
     return rcpp_result_gen;
@@ -305,7 +305,7 @@ RcppExport SEXP _bindrcpp_populate_env_symbol_wrapped_imp(SEXP envSEXP, SEXP nam
     if (rcpp_isError_gen) {
         SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
         UNPROTECT(1);
-        Rf_error("%s", CHAR(rcpp_msgSEXP_gen));
+        (Rf_error)("%s", CHAR(rcpp_msgSEXP_gen));
     }
     UNPROTECT(1);
     return rcpp_result_gen;
@@ -342,7 +342,7 @@ RcppExport SEXP _bindrcpp_create_env_string_imp(SEXP namesSEXP, SEXP funSEXP, SE
     if (rcpp_isError_gen) {
         SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
         UNPROTECT(1);
-        Rf_error("%s", CHAR(rcpp_msgSEXP_gen));
+        (Rf_error)("%s", CHAR(rcpp_msgSEXP_gen));
     }
     UNPROTECT(1);
     return rcpp_result_gen;
@@ -379,7 +379,7 @@ RcppExport SEXP _bindrcpp_populate_env_string_imp(SEXP envSEXP, SEXP namesSEXP, 
     if (rcpp_isError_gen) {
         SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
         UNPROTECT(1);
-        Rf_error("%s", CHAR(rcpp_msgSEXP_gen));
+        (Rf_error)("%s", CHAR(rcpp_msgSEXP_gen));
     }
     UNPROTECT(1);
     return rcpp_result_gen;
@@ -416,7 +416,7 @@ RcppExport SEXP _bindrcpp_create_env_symbol_imp(SEXP namesSEXP, SEXP funSEXP, SE
     if (rcpp_isError_gen) {
         SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
         UNPROTECT(1);
-        Rf_error("%s", CHAR(rcpp_msgSEXP_gen));
+        (Rf_error)("%s", CHAR(rcpp_msgSEXP_gen));
     }
     UNPROTECT(1);
     return rcpp_result_gen;
@@ -453,20 +453,10 @@ RcppExport SEXP _bindrcpp_populate_env_symbol_imp(SEXP envSEXP, SEXP namesSEXP, 
     if (rcpp_isError_gen) {
         SEXP rcpp_msgSEXP_gen = Rf_asChar(rcpp_result_gen);
         UNPROTECT(1);
-        Rf_error("%s", CHAR(rcpp_msgSEXP_gen));
+        (Rf_error)("%s", CHAR(rcpp_msgSEXP_gen));
     }
     UNPROTECT(1);
     return rcpp_result_gen;
-}
-// init_logging
-void init_logging(const std::string& log_level);
-RcppExport SEXP _bindrcpp_init_logging(SEXP log_levelSEXP) {
-BEGIN_RCPP
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< const std::string& >::type log_level(log_levelSEXP);
-    init_logging(log_level);
-    return R_NilValue;
-END_RCPP
 }
 // callback_string_typed
 SEXP callback_string_typed(Symbol name, bindrcpp::GETTER_FUNC_STRING_TYPED fun, bindrcpp::PAYLOAD payload);
@@ -581,7 +571,6 @@ static const R_CallMethodDef CallEntries[] = {
     {"_bindrcpp_populate_env_string_imp", (DL_FUNC) &_bindrcpp_populate_env_string_imp, 4},
     {"_bindrcpp_create_env_symbol_imp", (DL_FUNC) &_bindrcpp_create_env_symbol_imp, 4},
     {"_bindrcpp_populate_env_symbol_imp", (DL_FUNC) &_bindrcpp_populate_env_symbol_imp, 4},
-    {"_bindrcpp_init_logging", (DL_FUNC) &_bindrcpp_init_logging, 1},
     {"_bindrcpp_callback_string_typed", (DL_FUNC) &_bindrcpp_callback_string_typed, 3},
     {"_bindrcpp_callback_symbol_typed", (DL_FUNC) &_bindrcpp_callback_symbol_typed, 3},
     {"_bindrcpp_callback_string_wrapped", (DL_FUNC) &_bindrcpp_callback_string_wrapped, 3},
