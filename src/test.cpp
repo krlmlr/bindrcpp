@@ -2,8 +2,6 @@
 
 #include <bindrcpp.h>
 
-#include <plogr.h>
-
 #include <algorithm>
 #include <string>
 
@@ -17,9 +15,6 @@ SEXP callback_string_typed(
   bindrcpp::GETTER_FUNC_STRING_TYPED fun,
   bindrcpp::PAYLOAD payload
 ) {
-  LOG_VERBOSE << type2name(name);
-  LOG_VERBOSE << payload.p;
-
   String name_string = name.c_str();
   name_string.set_encoding(CE_NATIVE);
 
@@ -32,9 +27,6 @@ SEXP callback_symbol_typed(
   bindrcpp::GETTER_FUNC_SYMBOL_TYPED fun,
   bindrcpp::PAYLOAD payload
 ) {
-  LOG_VERBOSE << type2name(name);
-  LOG_VERBOSE << payload.p;
-
   return fun(name, payload);
 }
 
@@ -44,8 +36,6 @@ SEXP callback_string_wrapped(
   bindrcpp::GETTER_FUNC_STRING_WRAPPED fun,
   List payload
 ) {
-  LOG_VERBOSE << type2name(name);
-
   String name_string = name.c_str();
   name_string.set_encoding(CE_NATIVE);
 
@@ -58,8 +48,6 @@ SEXP callback_symbol_wrapped(
   bindrcpp::GETTER_FUNC_SYMBOL_WRAPPED fun,
   List payload
 ) {
-  LOG_VERBOSE << type2name(name);
-
   return fun(name, payload);
 }
 
@@ -68,30 +56,23 @@ class CallbackTester {
   const int magic;
 
 public:
-  CallbackTester() : magic(MAGIC) {
-    LOG_VERBOSE;
-  }
-  ~CallbackTester() {
-    LOG_VERBOSE;
-  }
+  CallbackTester() : magic(MAGIC) {}
+  ~CallbackTester() {}
 
   static SEXP tolower_static(const Rcpp::String& name, List payload) {
     XPtr<CallbackTester> p = payload[0];
     CallbackTester* this_ = p.get();
-    LOG_VERBOSE << this_;
     return this_->tolower(name);
   }
 
   static SEXP toupper_static(const Rcpp::String& name, List payload) {
     XPtr<CallbackTester> p = payload[0];
     CallbackTester* this_ = p.get();
-    LOG_VERBOSE << this_;
     return this_->toupper(name);
   }
 
 private:
   SEXP tolower(Rcpp::String name) {
-    LOG_VERBOSE << magic;
     if (magic != MAGIC) {
       stop("payload lost");
     }
@@ -106,7 +87,6 @@ private:
   }
 
   SEXP toupper(Rcpp::String name) {
-    LOG_VERBOSE << magic;
     if (magic != MAGIC) {
       stop("payload lost");
     }
