@@ -12,6 +12,6 @@ These objects are imported from other packages. Follow the links
 below to see their documentation.
 
 \describe{
-  \item{bindr}{\code{\link[bindr]{create_env}}, \code{\link[bindr]{populate_env}}}
+  \item{bindr}{\code{\link[bindrbindr:create_envpopulate_env]{create_envpopulate_env}()()}}
 }}
 
