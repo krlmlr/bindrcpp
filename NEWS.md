@@ -1,5 +1,18 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# bindrcpp 0.2.4.9005 (2026-05-06)
+
+## Continuous integration
+
+- Cosmetics.
+
+- Bump action versions.
+
+- Align fledge workflow.
+
+- Harmonize.
+
+
 # bindrcpp 0.2.4.9004 (2026-05-04)
 
 ## Chore
