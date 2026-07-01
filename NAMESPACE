@@ -3,6 +3,8 @@
 export(create_env)
 export(populate_env)
 importFrom(Rcpp,sourceCpp)
-importFrom(bindr,create_env)
-importFrom(bindr,populate_env)
+importFrom(bindr,
+  create_env,
+  populate_env
+)
 useDynLib(bindrcpp)
