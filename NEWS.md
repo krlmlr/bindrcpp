@@ -1,5 +1,12 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# bindrcpp 0.2.4.9009 (2026-07-02)
+
+## Chore
+
+- Auto-update from GitHub Actions (#73).
+
+
 # bindrcpp 0.2.4.9008 (2026-05-24)
 
 ## Continuous integration
