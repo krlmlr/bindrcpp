@@ -1,5 +1,12 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# bindrcpp 0.2.4.9012 (2026-07-25)
+
+## Continuous integration
+
+- Lock down `format-suggest` egress (audit → block).
+
+
 # bindrcpp 0.2.4.9011 (2026-07-24)
 
 ## Bug fixes
