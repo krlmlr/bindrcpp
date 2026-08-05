@@ -23,4 +23,4 @@ LinkingTo:
 Config/Needs/check: RcppCore/Rcpp
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-Config/roxygen2/version: 8.0.0.9000
+Config/roxygen2/version: 8.1.0.9000
