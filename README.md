@@ -1,28 +1,27 @@
 
-<!-- README.md is generated from README.Rmd. Please edit that file -->
+<!-- README.md and index.md are generated from README.Rmd.
+     Edit that file and render it the usual way: rmarkdown::render(),
+     devtools::build_readme(), or the Knit button. The cynkratemplate
+     package must be installed; it supplies the output format. -->
 
 # bindrcpp
 
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/krlmlr/bindrcpp/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/krlmlr/bindrcpp/actions/workflows/R-CMD-check.yaml)
-[![AppVeyor Build
-Status](https://ci.appveyor.com/api/projects/status/github/krlmlr/bindrcpp?branch=master&svg=true)](https://ci.appveyor.com/project/krlmlr/bindrcpp)
+[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/krlmlr/bindrcpp?branch=master&svg=true)](https://ci.appveyor.com/project/krlmlr/bindrcpp)
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/bindrcpp)](https://cran.r-project.org/package=bindrcpp)
 <!-- badges: end -->
 
-It’s easy to create active bindings in R via
+It's easy to create active bindings in R via
 [`makeActiveBinding()`](https://www.rdocumentation.org/packages/base/versions/3.3.1/topics/bindenv).
-This package faciliates the creation of active bindings that link back
-to C++ code. It provides an interface that allows binding several
-identifiers in an environment to the same C++ function, which is then
-called with the name (and a payload) as argument.
+This package faciliates the creation of active bindings that link back to C++ code.
+It provides an interface that allows binding several identifiers in an environment
+to the same C++ function, which is then called with the name (and a payload) as argument.
 
-It is recommended to use the newer `_wrapped` functions that support
-passing an arbitrary `Rcpp::List` as payload. This allows to store an
-`Rcpp::XPtr` to a C++ object in that list. The `XPtr` then will be
-released when the payload is garbage-collected, and the C++ object will
-be destroyed.
+It is recommended to use the newer `_wrapped` functions that support passing an arbitrary `Rcpp::List` as payload.
+This allows to store an `Rcpp::XPtr` to a C++ object in that list.
+The `XPtr` then will be released when the payload is garbage-collected, and the C++ object will be destroyed.
 
 ## Installation
 
@@ -85,5 +84,6 @@ The bindings are read-only:
 
 ``` r
 env$Converting <- "CONVERTING"
-#> Error: Binding is read-only.
+#> Error:
+#> ! Binding is read-only.
 ```
