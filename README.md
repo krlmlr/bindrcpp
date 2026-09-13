@@ -13,11 +13,10 @@
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/bindrcpp)](https://cran.r-project.org/package=bindrcpp)
 <!-- badges: end -->
 
-It's easy to create active bindings in R via
-[`makeActiveBinding()`](https://www.rdocumentation.org/packages/base/versions/3.3.1/topics/bindenv).
+It's easy to create active bindings in R via [`makeActiveBinding()`](https://www.rdocumentation.org/packages/base/versions/3.3.1/topics/bindenv).
 This package faciliates the creation of active bindings that link back to C++ code.
-It provides an interface that allows binding several identifiers in an environment
-to the same C++ function, which is then called with the name (and a payload) as argument.
+It provides an interface that allows binding several identifiers in an environment to the same C++ function,
+which is then called with the name (and a payload) as argument.
 
 It is recommended to use the newer `_wrapped` functions that support passing an arbitrary `Rcpp::List` as payload.
 This allows to store an `Rcpp::XPtr` to a C++ object in that list.
