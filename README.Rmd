@@ -33,6 +33,28 @@ This allows to store an `Rcpp::XPtr` to a C++ object in that list.
 The `XPtr` then will be released when the payload is garbage-collected, and the C++ object will be destroyed.
 
 
+## Goals and non-goals
+
+bindrcpp aims to:
+
+- Give C++ code the parametrized active bindings bindr gives R code:
+  an environment whose names each call one C++ function with the name of the binding and a payload.
+- Be linked against from another package:
+  `LinkingTo: bindrcpp` and `#include <bindrcpp.h>` expose `create_env_string()`, `create_env_symbol()`,
+  `populate_env_string()` and `populate_env_symbol()`.
+- Hand the binding name to the callback in whichever form suits it, `Rcpp::String` or `Rcpp::Symbol`.
+- Let the payload carry ownership:
+  the `_wrapped` functions take an `Rcpp::List`, so an `XPtr` placed in it destroys its C++ object once the payload is collected.
+
+It is explicitly not trying to:
+
+- Re-implement the R interface.
+  `create_env()` and `populate_env()` are re-exported from bindr unchanged.
+- Create writable bindings; as in bindr, assigning to one raises an error.
+- Offer an interface without Rcpp.
+  Callbacks, payloads, and return values are Rcpp types throughout, and the package both imports and links to Rcpp.
+- Move beyond the interface it has: since 0.2.2 in 2018, NEWS.md records compatibility and build fixes, not new features.
+
 ## Installation
 
 You can install bindrcpp from github with:
