@@ -17,7 +17,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">bindrcpp</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.2.4.9018</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.2.4.9019</span>
       </span>
     </div>
 
@@ -55,17 +55,13 @@
 
     <div id="details">
     <h2>Details</h2>
-    <p>Use <code>LinkingTo: bindrcpp</code> in <code>DESCRIPTION</code> and
-<code>#include &lt;bindrcpp.h&gt;</code> in your C++ headers and/or modules to access the
-C++ functions provided by this package:</p><ul><li><p><code>create_env_string()</code> creates an environment with active bindings, with
-names given as a character vector.  Access of these bindings triggers a
-call to a C++ function with a fixed signature (<code>GETTER_FUNC_STRING</code>);
-this call contains the name of the binding (as character) and an arbitrary
-payload (<code>PAYLOAD</code>, essentially a wrapped <code>void*</code>).</p></li>
-<li><p><code>create_env_symbol()</code> is similar, the callback function accepts the name of
-the binding as symbol instead of character (<code>GETTER_FUNC_SYMBOL</code>).</p></li>
-<li><p><code>populate_env_string()</code> and <code>populate_env_symbol()</code> populate an existing
-environment instead of creating a new one.</p></li>
+    <p>Use <code>LinkingTo: bindrcpp</code> in <code>DESCRIPTION</code>
+and <code>#include &lt;bindrcpp.h&gt;</code> in your C++ headers and/or modules to access the C++ functions provided by this package:</p><ul><li><p><code>create_env_string()</code> creates an environment with active bindings, with names given as a character vector.
+Access of these bindings triggers a call to a C++ function with a fixed signature (<code>GETTER_FUNC_STRING</code>);
+this call contains the name of the binding (as character) and an arbitrary payload (<code>PAYLOAD</code>, essentially a wrapped <code>void*</code>).</p></li>
+<li><p><code>create_env_symbol()</code> is similar,
+the callback function accepts the name of the binding as symbol instead of character (<code>GETTER_FUNC_SYMBOL</code>).</p></li>
+<li><p><code>populate_env_string()</code> and <code>populate_env_symbol()</code> populate an existing environment instead of creating a new one.</p></li>
 </ul></div>
     <div id="see-also">
     <h2>See also</h2>
