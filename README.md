@@ -1,8 +1,7 @@
 
 <!-- README.md and index.md are generated from README.Rmd.
-     Edit that file and render it the usual way: rmarkdown::render(),
-     devtools::build_readme(), or the Knit button. The cynkratemplate
-     package must be installed; it supplies the output format. -->
+     Edit that file and render it the usual way: rmarkdown::render(), devtools::build_readme(), or the Knit button.
+     The cynkratemplate package must be installed; it supplies the output format. -->
 
 # bindrcpp
 
@@ -13,11 +12,10 @@
 [![CRAN_Status_Badge](http://www.r-pkg.org/badges/version/bindrcpp)](https://cran.r-project.org/package=bindrcpp)
 <!-- badges: end -->
 
-It's easy to create active bindings in R via
-[`makeActiveBinding()`](https://www.rdocumentation.org/packages/base/versions/3.3.1/topics/bindenv).
+It's easy to create active bindings in R via [`makeActiveBinding()`](https://www.rdocumentation.org/packages/base/versions/3.3.1/topics/bindenv).
 This package faciliates the creation of active bindings that link back to C++ code.
-It provides an interface that allows binding several identifiers in an environment
-to the same C++ function, which is then called with the name (and a payload) as argument.
+It provides an interface that allows binding several identifiers in an environment to the same C++ function,
+which is then called with the name (and a payload) as argument.
 
 It is recommended to use the newer `_wrapped` functions that support passing an arbitrary `Rcpp::List` as payload.
 This allows to store an `Rcpp::XPtr` to a C++ object in that list.
