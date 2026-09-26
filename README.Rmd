@@ -39,8 +39,8 @@ The `XPtr` then will be released when the payload is garbage-collected, and the 
 You can install bindrcpp from github with:
 
 ```{r gh-installation, eval = FALSE}
-# install.packages("devtools")
-devtools::install_github("krlmlr/bindrcpp")
+# install.packages("pak")
+pak::pak("krlmlr/bindrcpp")
 ```
 
 ## Example

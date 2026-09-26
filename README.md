@@ -29,8 +29,8 @@ be destroyed.
 You can install bindrcpp from github with:
 
 ``` r
-# install.packages("devtools")
-devtools::install_github("krlmlr/bindrcpp")
+# install.packages("pak")
+pak::pak("krlmlr/bindrcpp")
 ```
 
 ## Example
