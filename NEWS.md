@@ -1,5 +1,16 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# bindrcpp 0.2.4.9020 (2026-09-26)
+
+## Documentation
+
+- Break lines at meaning boundaries (#87).
+
+- Harmonize README and pkgdown front page rendering (#86).
+
+- Use `pak::pak()` for the development install (#84).
+
+
 # bindrcpp 0.2.4.9019 (2026-09-13)
 
 ## Chore
