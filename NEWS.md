@@ -1,5 +1,16 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# bindrcpp 0.2.4.9025 (2026-11-27)
+
+## Chore
+
+- Tidy DESCRIPTION with usethis::use_tidy_description() (#100).
+
+## Continuous integration
+
+- Sync the workflows with cynkra/cynkratemplate (#99).
+
+
 # bindrcpp 0.2.4.9024 (2026-11-27)
 
 ## Continuous integration
